@@ -7,9 +7,9 @@
     <title>the-webshop-template</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
 
-    <div id="cartContainer">
+    <section id="cartSection">
         <div id="cartMenu">
             <div id="menuContainer">
                 <div id="menuText">
@@ -27,9 +27,9 @@
             <p>(inkl. moms)</p>
         </div>
         </div>
-    </div>
+    </section>
 
-    <div id="paymentContainer">
+    <section id="paymentSection">
         <div id="paymentMenu">
             <div id="paymentMenuContainer">
                 <div id="paymentMenuText">
@@ -39,14 +39,58 @@
             </div>
         </div>
 
-        <div id="customerInfoContainer">
-            <div id="customerFormContainer">
-                <form action="">
-                    <input type="text" >
+        <section id="checkoutFormSection">
+                <form id="checkoutForm">
+
+                    <fieldset>
+                        <legend>Personlig information</legend>
+
+                        <label for="firstName">Förnamn</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Förnamn" required>
+
+                        <label for="lasttName">Efternamn</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Efternamn" required>
+
+                        <label for="email">E-post</label>
+                        <input type="email" id="email" name="email" placeholder="E-post" required>
+
+                        <label for="phone">Mobilnummer</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Mobilnummer" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Adress</legend>
+
+                        <label for="street">Gata</label>
+                        <input type="text" id="street" name="street" placeholder="Gata" required>
+
+                        <label for="city">Stad</label>
+                        <input type="text" id="city" name="city" placeholder="Stad" required>
+
+                        <label for="zip">Postnummer</label>
+                        <input type="text" id="zip" name="zip" placeholder="Postnummer" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Betalning</legend>
+
+                        <label for="cardNumber">Kortnummer</label>
+                        <input type="number" id="cardNumber" name="cardNumber" pattern="[0-9]{16}" maxlength="16" placeholder="XXXX XXXX XXXX XXXX" required>
+
+                        <label for="expiry">Giltihetstid</label>
+                        <input type="month" id="expiry" name="expiry" required>
+
+                        <label for="cvv">CVV</label>
+                        <input type="number" id="cvv" name="cvv" pattern="[0-9]" maxlength="3" placeholder="XXX" required>
+                    </fieldset>
+
+                    <button type="submit" id="submitOrder">Slutför köp</button>
                 </form>
             </div>
         </div>
     </div>
+    </section>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
