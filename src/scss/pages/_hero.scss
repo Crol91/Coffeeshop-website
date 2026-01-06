@@ -1,0 +1,117 @@
+/* ENDAST PÅBÖRJAD*/
+/* Landing page – Hero (mobile-first) */
+.landing-hero {
+  min-height: 100svh;
+  background-image: url("/src/assets/landningpage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  display: flex;
+  align-items: flex-start; /* mobil: text startar uppifrån */
+  padding: 6.5rem 1rem 4.5rem; /* plats för navbar + lite luft */
+  color: #3b2a1f;
+
+  /* overlay för läsbarhet på mobil */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 34rem;
+    margin: 0 auto; /* mobil: centrerad block */
+  }
+
+  &__welcome {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  &__title {
+    margin: 0 0 0.75rem;
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
+    line-height: 1.05;
+  }
+
+  &__subtitle {
+    margin: 0 0 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 40ch;
+  }
+
+  &__cta {
+    display: inline-block;
+    width: 100%;          /* mobil: full bredd */
+    max-width: 18rem;
+    padding: 0.95rem 1.5rem;
+    border: 0;
+    border-radius: 999px;
+    background: #5a3b2e;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  &__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 1.25rem;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    background: rgba(0, 0, 0, 0.12);
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+}
+
+/* Tablet och uppåt */
+@media (min-width: 768px) {
+  .landing-hero {
+    align-items: center;
+    padding: 6rem 2rem 4rem;
+
+    /* på större skärm kan overlay vara mer “vänster-fade” */
+    &::before {
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.70) 0%,
+        rgba(255, 255, 255, 0.40) 45%,
+        rgba(0, 0, 0, 0.05) 100%
+      );
+    }
+
+    &__content {
+      margin: 0;
+      max-width: 38rem;
+    }
+
+    &__cta {
+      width: auto; /* desktop: inte full bredd */
+    }
+  }
+}
+
+/* Desktop och uppåt (text mer åt vänster som i din bild) */
+@media (min-width: 1024px) {
+  .landing-hero {
+    padding-left: clamp(2rem, 6vw, 5rem);
+  }
+}
+
