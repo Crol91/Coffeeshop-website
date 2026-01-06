@@ -1,3 +1,79 @@
+@use "../base/mixins" as mix;
+
 body {
     background-color: rgb(241, 241, 241);
+}
+
+#app{
+    width: 100%;
+    text-align: left;
+    @include mix.flex($direction:column, $align:center);
+}
+fieldset{
+    @include mix.flex($direction: column);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid lightgrey;
+    legend {
+        padding: 5px;
+        color: rgb(170, 170, 170);
+    }
+
+    label{
+        font-weight: 600;
+    }
+    input{
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid lightgrey;
+        font-size: 1rem;
+        &::placeholder{
+            color: rgb(209, 209, 209);
+        }
+    }
+}
+
+#cartSection{
+    background-color: rgb(235, 235, 235);
+    padding: 20px;
+    margin: 20px;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 25px;
+    border: 1px solid rgb(204, 204, 204);
+    #totalPrice{
+        h3{
+            margin: 0;
+        }
+        p{
+            margin: 0;
+            font-size: 0.7rem;
+            color: rgb(176, 176, 176);
+        }
+    }
+}
+
+#paymentSection{
+    background-color: rgb(235, 235, 235);
+    padding: 20px;
+    margin: 20px;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 25px;
+    border: 1px solid rgb(204, 204, 204);
+    #paymentMenuText{
+        margin-bottom: 20px;
+        h2{
+            margin: 0;
+        }
+        p{
+            margin: 0;
+            color: rgb(91, 91, 91);
+        }
+    }
+    #submitOrder {
+    margin: 20px;
+    padding: 20px;
+    }
 }
