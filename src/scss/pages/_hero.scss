@@ -1,3 +1,6 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
 /* ENDAST PÅBÖRJAD*/
 /* Landing page – Hero (mobile-first) */
 .landing-hero {
@@ -48,37 +51,14 @@
     max-width: 40ch;
   }
 
-  &__cta {
-    display: inline-block;
-    width: 100%;          /* mobil: full bredd */
-    max-width: 18rem;
-    padding: 0.95rem 1.5rem;
-    border: 0;
-    border-radius: 999px;
-    background: #5a3b2e;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-  }
+ &__cta {
+  @include m.bttnDesignPrimary();
 
-  &__scroll {
-    position: absolute;
-    left: 50%;
-    bottom: 1.25rem;
-    transform: translateX(-50%);
-    z-index: 1;
+  width: 100%;
+  max-width: 18rem;
+  padding: 0.95rem 1.5rem;
+}
 
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.75);
-    background: rgba(0, 0, 0, 0.12);
-    display: grid;
-    place-items: center;
-    font-size: 1.2rem;
-    color: #fff;
-  }
 }
 
 /* Tablet och uppåt */

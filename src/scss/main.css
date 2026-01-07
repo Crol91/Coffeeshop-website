@@ -1,0 +1,85 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+body {
+  background-color: rgb(241, 241, 241);
+}
+
+#app {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid lightgrey;
+}
+fieldset legend {
+  padding: 5px;
+  color: rgb(170, 170, 170);
+}
+fieldset label {
+  font-weight: 600;
+}
+fieldset input {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  font-size: 1rem;
+}
+fieldset input::-moz-placeholder {
+  color: rgb(209, 209, 209);
+}
+fieldset input::placeholder {
+  color: rgb(209, 209, 209);
+}
+
+#cartSection {
+  background-color: rgb(235, 235, 235);
+  padding: 20px;
+  margin: 20px;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 25px;
+  border: 1px solid rgb(204, 204, 204);
+}
+#cartSection #totalPrice h3 {
+  margin: 0;
+}
+#cartSection #totalPrice p {
+  margin: 0;
+  font-size: 0.7rem;
+  color: rgb(176, 176, 176);
+}
+
+#paymentSection {
+  background-color: rgb(235, 235, 235);
+  padding: 20px;
+  margin: 20px;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 25px;
+  border: 1px solid rgb(204, 204, 204);
+}
+#paymentSection #paymentMenuText {
+  margin-bottom: 20px;
+}
+#paymentSection #paymentMenuText h2 {
+  margin: 0;
+}
+#paymentSection #paymentMenuText p {
+  margin: 0;
+  color: rgb(91, 91, 91);
+}
+#paymentSection #submitOrder {
+  margin: 20px;
+  padding: 20px;
+}/*# sourceMappingURL=main.css.map */
