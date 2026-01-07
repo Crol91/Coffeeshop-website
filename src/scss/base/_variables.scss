@@ -49,3 +49,5 @@ $border-radius: 20px;
 /* Effects */
 $shadow-text: 0px 4px 4px #00000040;
 
+/* Breakpoints for media queries */
+$grid-breakpoints: (sm: 480px, md: 768px, lg: 800px);
