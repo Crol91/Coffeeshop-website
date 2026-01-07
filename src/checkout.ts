@@ -19,12 +19,16 @@ export const checkout = () => {
         heading.textContent = `Tack för din beställning, ${firstName}!`;
         orderText.innerHTML = `Ditt ordernummer är <strong>#${orderNumber}</strong>`;
         emailText.innerHTML = `En bekräftelse på ditt köp har skickats till <strong>${email}</strong>.`
-        
+        // Add to DOM //
         checkoutFormSection.appendChild(orderConfirmation);
         orderConfirmation.appendChild(heading);
         orderConfirmation.appendChild(orderText);
         orderConfirmation.appendChild(emailText);
 
+        orderConfirmation.addEventListener("click", () => {
+            orderConfirmation.remove();
+        });
+        
         checkoutForm.reset();
     });
 
