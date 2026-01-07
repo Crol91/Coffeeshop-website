@@ -13,30 +13,58 @@ body {
     h2{
         font-size: var.$h2-fontSize;
         font-family: var.$h2-fontFamily;
-        font-weight: 600;
+        font-weight: var.$weight-600;
         color: var.$primary-color;
     }
     h3{
         font-size: var.$h3-fontSize;
         font-family: var.$h3-fontFamily;
-        font-weight: 600;
+        font-weight:var.$weight-600;
         color: var.$primary-color;
     }
     p{
         font-family: var.$p-fontFamily;
+        color: var.$primary-color;
+    }
+    a{
+        font-family: var.$p-fontFamily;
+        color: var.$primary-color;
+        text-decoration: none;
+        @include mix.flex($justify:center, $align:center);
+        gap: 0.5em;
     }
 }
-
-
+nav{
+    background-color: white;
+    width: 100%;
+    #navBar{
+        padding: var.$p20;
+        position: relative;
+        @include mix.flex($align:center);
+        p{
+            margin: 0;
+        }
+        h1 {
+            position: absolute;
+            font-size: var.$h1-fontSize;
+            font-family: var.$h1-fontFamily;
+            color: var.$primary-color;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            filter: drop-shadow(var.$shadow-text);
+        }
+    }
+}
 fieldset{
     @include mix.flex($direction: column);
     border-radius: 10px;
-    margin: 20px;
-    padding: 20px;
+    margin: var.$m20;
+    padding: var.$p20;
     border: 1px solid lightgrey;
     
     legend {
-        padding: 5px;
+        padding: var.$p5;
         color: rgb(170, 170, 170);
         font-family: var.$p-fontFamily;
     }
@@ -44,12 +72,12 @@ fieldset{
     label{
         font-size: var.$h4-fontSize;
         font-family: var.$h4-fontFamily;
-        font-weight: 600;
+        font-weight: var.$weight-600;
         color: var.$primary-color;
-        margin-top: 10px;
+        margin-top: var.$m10;
     }
     input{
-        padding: 20px;
+        padding: var.$p20;
         border-radius: 10px;
         border: 1px solid lightgrey;
         font-size: 1rem;
@@ -61,8 +89,8 @@ fieldset{
 
 #cartSection{
     background-color: rgb(235, 235, 235);
-    padding: 20px;
-    margin: 20px;
+    padding: var.$p20;
+    margin: var.$m20;
     width: 90%;
     max-width: 700px;
     border-radius: 25px;
@@ -81,26 +109,30 @@ fieldset{
 
 #paymentSection{
     background-color: rgb(235, 235, 235);
-    padding: 20px;
-    margin: 20px;
+    padding: var.$p20;
+    margin: var.$m20;
     width: 90%;
     max-width: 700px;
     border-radius: 25px;
     border: 1px solid rgb(204, 204, 204);
     #paymentMenuText{
-        margin-bottom: 20px;
+        margin-bottom: var.$m20;
         h2{
             margin: 0;
         }
         p{
             margin: 0;
-            color: rgb(91, 91, 91);
         }
     }
     #submitOrder {
         @include mix.bttnDesignPrimary;
-        margin: 15px;
-        padding: 15px;
+        margin: var.$m15;
+        padding: var.$p15;
         font-family: var.$h2-fontFamily;
+        cursor: pointer;
+        border: none;
+        &:hover{
+            background-color: var.$hover;
+        }
     }
 }

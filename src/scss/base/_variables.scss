@@ -19,25 +19,31 @@
     $h4-fontFamily: "Familjen Grotesk", sans-serif;
     $h5-fontFamily:"Familjen Grotesk", sans-serif;
 
+    /* Font-weight */
+    $weight-400: 400;
+    $weight-600: 600;
+
 /* Colors */
 $primary-color: #4D3328;
 $secondary-color: #F8F1E6;
 $accent-color: #FCE5C3;
 $menu-bg: #FFFFFF99;
+$hover: #846b60;
 
 /* Border */
 $border-radius: 20px;
-$border-text: 1px solid #4D3328;
 
 /* Spacing */
     /* padding */
     $p5: 5px;
     $p10: 10px;
+    $p15: 15px;
     $p20: 20px;
 
     /* margin */
     $m5: 5px;
     $m10: 10px;
+    $m15: 15px;
     $m20: 20px;
 
 /* Effects */
