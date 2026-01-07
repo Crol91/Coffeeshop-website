@@ -3,21 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css">
     <title>Bästsäljare</title>
   </head>
   <body>
+    <!-- navbar -->
     <header>
       <h1>Coffeeshop</h1>
       <nav class="navBar">
         <div class="navItems">
-          <a href="#favourites">Favoriter</a>
-          <a href="#login">Logga in</a>
-          <a href="#cart">Varukorg</a>
+          <ul> 
+          <li><a href="#favourites">Favoriter</a></li>
+          <li><a href="#login">Logga in</a></li>
+          <li><a href="#cart">Varukorg</a></li>
+          </ul>
         </div>
     </nav>
     </header>
     <h3>Njut av vårat bästsäljande kaffe</h3>
-    
+    <!-- taste filter -->
     <button id="showFilter">Filtrera</button>
 
     <form id="filterOptions">
@@ -35,7 +39,9 @@
       ><br />
       <button type="submit">Visa produkter</button>
     </form>
+    <!-- container for product cards -->
     <div id="productContainer"></div>
+    <!-- footer columns -->
     <footer>
       <div class="footerColumn">
         <h5>Hjälp</h5>
@@ -67,20 +73,20 @@
       <div class="footerColumn">
         <h5>Betalmetod:</h5>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li><i class="fa-brands fa-cc-visa"></i></li>
+          <li><i class="fa-brands fa-cc-mastercard"></i></li>
+          <li><i class="fa-brands fa-apple-pay"></i></li>
+          <li><i class="fa-brands fa-cc-paypal"></i></li>
         </ul>
       </div>
 
       <div class="footerColumn">
         <h5>Följ oss:</h5>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li><i class="fa-brands fa-instagram"></i></li>
+          <li><i class="fa-brands fa-linkedin"></i></li>
+          <li><i class="fa-brands fa-facebook"></i></li>
+          <li><i class="fa-brands fa-youtube"></i></li>
         </ul>
       </div>
     </footer>
