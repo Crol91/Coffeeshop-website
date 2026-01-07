@@ -1,26 +1,45 @@
 /* Typography */
-/* Fonts-sizes */
-$p-fontSize: 1rem;
-$small-font: 0.875rem;
+    /* Fonts-sizes */
+    $p-fontSize: 1rem;
+    $small-font: 0.875rem;
 
-$h1-fontSize: 1.75rem;
-$h2-fontSize: 1.5rem;
-$h3-fontSize: 1.25rem;
-$h4-fontSize: 1.125rem;
-$h5-fontSize: 1rem;
+    $h1-fontSize: 1.75rem;
+    $h2-fontSize: 1.5rem;
+    $h3-fontSize: 1.25rem;
+    $h4-fontSize: 1.125rem;
+    $h5-fontSize: 1rem;
 
+    /* Font-family */
+    $p-fontFamily: "Inter", sans-serif;
+    $small-fontFamily: "Inter", sans-serif;
 
-$p-fontFamily: "Inter", sans-serif;
-$small-fontFamily: "Inter", sans-serif;
-
-$h1-fontFamily: "Ephesis", cursive;
-$h2-fontFamily: "Familjen Grotesk", sans-serif;
-$h3-fontFamily: "Familjen Grotesk", sans-serif;
-$h4-fontFamily: "Familjen Grotesk", sans-serif;
-$h5-fontFamily:"Familjen Grotesk", sans-serif;
+    $h1-fontFamily: "Ephesis", cursive;
+    $h2-fontFamily: "Familjen Grotesk", sans-serif;
+    $h3-fontFamily: "Familjen Grotesk", sans-serif;
+    $h4-fontFamily: "Familjen Grotesk", sans-serif;
+    $h5-fontFamily:"Familjen Grotesk", sans-serif;
 
 /* Colors */
 $primary-color: #4D3328;
 $secondary-color: #F8F1E6;
 $accent-color: #FCE5C3;
 $menu-bg: #FFFFFF99;
+
+/* Border */
+$border-radius: 20px;
+$border-text: 1px solid #4D3328;
+
+/* Spacing */
+    /* padding */
+    $p5: 5px;
+    $p10: 10px;
+    $p20: 20px;
+
+    /* margin */
+    $m5: 5px;
+    $m10: 10px;
+    $m20: 20px;
+
+/* Effects */
+$shadow-text: 0px 4px 4px #00000040;
+

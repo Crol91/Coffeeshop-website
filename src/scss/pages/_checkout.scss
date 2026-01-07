@@ -2,27 +2,51 @@
 @use "../base/variables" as var;
 
 body {
-    background-color: rgb(241, 241, 241);
+    background-color: #efefef;
+    margin: 0;
 }
 
 #app{
     width: 100%;
     text-align: left;
     @include mix.flex($direction:column, $align:center);
+    h2{
+        font-size: var.$h2-fontSize;
+        font-family: var.$h2-fontFamily;
+        font-weight: 600;
+        color: var.$primary-color;
+    }
+    h3{
+        font-size: var.$h3-fontSize;
+        font-family: var.$h3-fontFamily;
+        font-weight: 600;
+        color: var.$primary-color;
+    }
+    p{
+        font-family: var.$p-fontFamily;
+    }
 }
+
+
 fieldset{
     @include mix.flex($direction: column);
     border-radius: 10px;
     margin: 20px;
     padding: 20px;
     border: 1px solid lightgrey;
+    
     legend {
         padding: 5px;
         color: rgb(170, 170, 170);
+        font-family: var.$p-fontFamily;
     }
 
     label{
+        font-size: var.$h4-fontSize;
+        font-family: var.$h4-fontFamily;
         font-weight: 600;
+        color: var.$primary-color;
+        margin-top: 10px;
     }
     input{
         padding: 20px;
@@ -75,8 +99,8 @@ fieldset{
     }
     #submitOrder {
         @include mix.bttnDesignPrimary;
-        margin: 20px;
-        padding: 20px;
-        font-family: var.$h1-fontFamily;
+        margin: 15px;
+        padding: 15px;
+        font-family: var.$h2-fontFamily;
     }
 }
