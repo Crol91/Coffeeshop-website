@@ -1,3 +1,6 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
 /* ENDAST PÅBÖRJAD*/
 /* Landing page – Hero (mobile-first) */
 .landing-hero {
@@ -29,17 +32,27 @@
     margin: 0 auto; /* mobil: centrerad block */
   }
 
-  &__welcome {
-    margin: 0 0 0.5rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
+ &__welcome {
+  margin: 0 0 0.5rem;
+  font-family: v.$h3-fontFamily;
+  font-size: v.$h3-fontSize;
+  font-weight: v.$weight-600;
+}
 
-  &__title {
-    margin: 0 0 0.75rem;
-    font-size: clamp(2.2rem, 9vw, 3.2rem);
-    line-height: 1.05;
-  }
+&__title {
+  margin: 0 0 v.$m15;
+  font-family: v.$h1-fontFamily;
+  font-weight: v.$weight-600;
+
+  font-size: clamp(
+    v.$h1-fontSize,
+    9vw,
+    3.2rem
+  );
+
+  line-height: 1.8;
+}
+
 
   &__subtitle {
     margin: 0 0 1.5rem;
@@ -48,37 +61,29 @@
     max-width: 40ch;
   }
 
-  &__cta {
-    display: inline-block;
-    width: 100%;          /* mobil: full bredd */
-    max-width: 18rem;
-    padding: 0.95rem 1.5rem;
-    border: 0;
-    border-radius: 999px;
-    background: #5a3b2e;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-  }
+&__cta {
+  @include m.bttnDesignPrimary();
+  width: 100%;
+  max-width: 18rem;
+  padding: 0.95rem 1.5rem;
+}
 
-  &__scroll {
-    position: absolute;
-    left: 50%;
-    bottom: 1.25rem;
-    transform: translateX(-50%);
-    z-index: 1;
+/* går ev att använda 
+&__cta {
+  @include m.bttnDesignPrimary(
+    $font-size: 1rem,
+    $border-radius: 999px
+  );
+  display: inline-block;
+  width: 100%;          
+  max-width: 18rem;
+  padding: 0.95rem 1.5rem;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+ */
 
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.75);
-    background: rgba(0, 0, 0, 0.12);
-    display: grid;
-    place-items: center;
-    font-size: 1.2rem;
-    color: #fff;
-  }
+
 }
 
 /* Tablet och uppåt */

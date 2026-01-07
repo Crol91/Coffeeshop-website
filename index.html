@@ -3,15 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>the-webshop-template</title>
   </head>
   <body>
     <!-- navbar -->
+    <header>
+      <h1>Coffeeshop</h1>
+      <nav class="navBar">
+        <div class="navItems">
+          <ul>
+            <li><a href="#favourites">Favoriter</a></li>
+            <li><a href="#login">Logga in</a></li>
+            <li><a href="#cart">Varukorg</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
     <!-- HÄR ska hero ligga -->
     <section class="landing-hero" id="top">
@@ -31,6 +43,54 @@
 
     <!-- resten av sidan -->
     <div id="app"></div>
+    <footer>
+      <div class="footerColumn">
+        <h5>Hjälp</h5>
+        <ul>
+          <li>Hjälpcenter</li>
+          <li>Villkor</li>
+          <li>Leverans</li>
+        </ul>
+      </div>
+
+      <div class="footerColumn">
+        <h5>Om Coffeeshop</h5>
+        <ul>
+          <li>Om oss</li>
+          <li>Cookies</li>
+          <li>Hållbarhet</li>
+        </ul>
+      </div>
+
+      <div class="footerColumn">
+        <h5>Kontakt</h5>
+        <ul>
+          <li>Telefonnummer: 08-1234 56</li>
+          <li>E-post: kundservice@coffeeshop.se</li>
+          <li>Adress: Gustav III:s Boulevard 169 96 Solna</li>
+        </ul>
+      </div>
+
+      <div class="footerColumn">
+        <h5>Betalmetod:</h5>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+      <div class="footerColumn">
+        <h5>Följ oss:</h5>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </footer>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
