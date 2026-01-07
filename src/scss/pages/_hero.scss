@@ -51,13 +51,28 @@
     max-width: 40ch;
   }
 
- &__cta {
+&__cta {
   @include m.bttnDesignPrimary();
-
   width: 100%;
   max-width: 18rem;
   padding: 0.95rem 1.5rem;
 }
+
+/* går ev att använda 
+&__cta {
+  @include m.bttnDesignPrimary(
+    $font-size: 1rem,
+    $border-radius: 999px
+  );
+  display: inline-block;
+  width: 100%;          
+  max-width: 18rem;
+  padding: 0.95rem 1.5rem;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+ */
+
 
 }
 
