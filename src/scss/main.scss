@@ -1,4 +1,6 @@
 @forward "base/variables";
 @forward "base/mixins";
 @forward "pages/checkout";
+@forward "pages/product";
+@use "./pages/hero";
 @import "@fortawesome/fontawesome-free/css/all.min.css";
