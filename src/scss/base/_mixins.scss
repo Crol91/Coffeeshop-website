@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 /* flexbox */
 @mixin flex ($flex:flex, $direction:row, $justify:flex-start, $align:stretch){
     display:$flex;
@@ -21,4 +23,11 @@
     background-color: $background;
     border: $border;
     filter: drop-shadow($shadow);
+}
+
+/* mixin media query */
+@mixin respond($bp) {
+    @media (min-width: map-get($grid-breakpoints, $bp)){
+        @content;
+    }
 }

@@ -4,6 +4,7 @@
 body {
     background-color: #efefef;
     margin: 0;
+    min-width: 320px;
 }
 
 #app{
@@ -40,26 +41,31 @@ nav{
     #navBar{
         padding: var.$p20;
         position: relative;
-        @include mix.flex($align:center);
+        @include mix.flex($direction: column, $align:center);
+        @include mix.respond(md){
+            flex-direction: row;
+        }
         p{
             margin: 0;
         }
         h1 {
-            position: absolute;
             font-size: var.$h1-fontSize;
             font-family: var.$h1-fontFamily;
             color: var.$primary-color;
+            @include mix.respond(md) {
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
             filter: drop-shadow(var.$shadow-text);
+            position: absolute; 
+            }
         }
+
     }
 }
 fieldset{
     @include mix.flex($direction: column);
     border-radius: 10px;
-    margin: var.$m20;
     padding: var.$p20;
     border: 1px solid lightgrey;
     
@@ -91,8 +97,8 @@ fieldset{
     background-color: rgb(235, 235, 235);
     padding: var.$p20;
     margin: var.$m20;
-    width: 90%;
     max-width: 700px;
+    width: 80%;
     border-radius: 25px;
     border: 1px solid rgb(204, 204, 204);
     #totalPrice{
@@ -109,14 +115,13 @@ fieldset{
 
 #paymentSection{
     background-color: rgb(235, 235, 235);
-    padding: var.$p20;
-    margin: var.$m20;
-    width: 90%;
     max-width: 700px;
+    width: 80%;
+    padding: var.$p20;
     border-radius: 25px;
     border: 1px solid rgb(204, 204, 204);
     #paymentMenuText{
-        margin-bottom: var.$m20;
+        margin: var.$m20;
         h2{
             margin: 0;
         }
