@@ -1,3 +1,5 @@
+/* Typography */
+/* Fonts-sizes */
 $p-fontSize: 1rem;
 $small-font: 0.875rem;
 
@@ -7,11 +9,18 @@ $h3-fontSize: 1.25rem;
 $h4-fontSize: 1.125rem;
 $h5-fontSize: 1rem;
 
-$p-fontFamily: 
-$small-fontFamily: 
 
-$h1-fontFamily:
-$h2-fontFamily: 
-$h3-fontFamily: 
-$h4-fontFamily: 
-$h5-fontFamily:
+$p-fontFamily: "Inter", sans-serif;
+$small-fontFamily: "Inter", sans-serif;
+
+$h1-fontFamily: "Ephesis", cursive;
+$h2-fontFamily: "Familjen Grotesk", sans-serif;
+$h3-fontFamily: "Familjen Grotesk", sans-serif;
+$h4-fontFamily: "Familjen Grotesk", sans-serif;
+$h5-fontFamily:"Familjen Grotesk", sans-serif;
+
+/* Colors */
+$primary-color: #4D3328;
+$secondary-color: #F8F1E6;
+$accent-color: #FCE5C3;
+$menu-bg: #FFFFFF99;
