@@ -10,6 +10,7 @@ body {
 #app{
     width: 100%;
     text-align: left;
+    margin-bottom: var.$p20;
     @include mix.flex($direction:column, $align:center);
     h2{
         font-size: var.$h2-fontSize;
@@ -52,11 +53,11 @@ nav{
             font-size: var.$h1-fontSize;
             font-family: var.$h1-fontFamily;
             color: var.$primary-color;
+            filter: drop-shadow(var.$shadow-text);
             @include mix.respond(md) {
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
-            filter: drop-shadow(var.$shadow-text);
             position: absolute; 
             }
         }
@@ -67,6 +68,7 @@ fieldset{
     @include mix.flex($direction: column);
     border-radius: 10px;
     padding: var.$p20;
+    width: 90%;
     border: 1px solid lightgrey;
     
     legend {
@@ -129,15 +131,19 @@ fieldset{
             margin: 0;
         }
     }
-    #submitOrder {
-        @include mix.bttnDesignPrimary;
-        margin: var.$m15;
-        padding: var.$p15;
-        font-family: var.$h2-fontFamily;
-        cursor: pointer;
-        border: none;
-        &:hover{
-            background-color: var.$hover;
+    #checkoutForm{
+        @include mix.flex($direction: column, $justify:center, $align:center);
+    
+        #submitOrder {
+            @include mix.bttnDesignPrimary;
+            margin: var.$m15;
+            padding: var.$p15;
+            font-family: var.$h2-fontFamily;
+            cursor: pointer;
+            border: none;
+            &:hover{
+                background-color: var.$hover;
+            }
         }
     }
 }
