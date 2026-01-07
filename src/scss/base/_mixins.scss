@@ -4,3 +4,12 @@
     justify-content: $justify;
     align-items: $align;
 }
+
+@mixin bttnDesign ($background:#4D3328, $color: #FCE5C3, $font-size: 1.5rem, $font-weight: 600, $border-radius: 20px, $shadow: 0px 0px 10px #FFA50280){
+    background-color: $background;
+    color: #FCE5C3;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    border-radius: $border-radius;
+    filter: drop-shadow($shadow);
+}

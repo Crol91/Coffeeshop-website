@@ -73,7 +73,8 @@ fieldset{
         }
     }
     #submitOrder {
-    margin: 20px;
-    padding: 20px;
+        @include mix.bttnDesign;
+        margin: 20px;
+        padding: 20px;
     }
 }
