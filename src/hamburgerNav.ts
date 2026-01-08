@@ -1,3 +1,4 @@
+export function initHamburgerNav() {
 const burger = document.querySelector(".burger") as HTMLButtonElement | null;
 const nav = document.querySelector(".navBar") as HTMLElement | null;
 const overlay = document.querySelector(".nav-overlay") as HTMLElement | null;
@@ -30,4 +31,5 @@ if (burger && nav && overlay) {
     const target = e.target as HTMLElement;
     if (target.closest("a")) closeMenu();
   });
+}
 }
