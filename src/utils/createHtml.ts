@@ -48,7 +48,7 @@ export const cartHtml = () => {
 
     cartTitle.textContent = "Varukorg";
     totalText.textContent = "Totalt";
-    checkoutLink.href = "#checkout";
+    checkoutLink.href = "checkout";
     checkoutLink.textContent = "Till kassan";
 
     cartSpanContainer.append(cartSpan1, cartSpan2);
