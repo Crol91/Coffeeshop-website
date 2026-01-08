@@ -1,0 +1,68 @@
+@use "../base/mixins" as mix;
+@use "../base/variables" as var;
+@use "../base/layout" as layout;
+
+#cartContainer{
+    position: absolute;
+    background-color: white;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 0%;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: all 1s ease;
+    overflow: hidden;
+    &.show{
+    width: 90%;
+    transform: translateX(0);
+    @include mix.respond(md){
+        width: 40%;
+        }
+    }
+    &.hide{
+        width: 0%;
+        transform: translateX(100%);
+    }
+    #cartHeader{
+        @include mix.flex($justify: space-between, $align: center);
+        background-color: var.$secondary-color;
+        padding: var.$p20;
+        #cartSpanContainer{
+            position: relative;
+            height: 27.5px;
+            width: 27.5px;
+            span{
+                position: absolute;
+                width: 0.3rem;
+                height: 1.5rem;
+                top: 50%;
+                left: 50%;
+                border-radius: 3px;
+                background-color: var.$primary-color;
+                transform-origin: center;
+                cursor: pointer;
+            }
+            #cartSpan1{
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            #cartSpan2{
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+    #cartPriceSummary{
+        padding: var.$p20;
+    }
+    #cartBttn{
+        @include mix.bttnDesignPrimary;
+        padding: var.$p20;
+        margin: var.$m20;
+        max-width: 200px;
+        a {
+            text-decoration: none;
+            font-size: var.$h2-fontSize;
+            color: var.$secondary-color;
+        }
+    }
+}

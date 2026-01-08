@@ -18,3 +18,43 @@ export const confirmationHtml = (firstName:string, email:string): HTMLDivElement
         checkoutFormSection.appendChild(orderConfirmation);
         return orderConfirmation;
 }
+
+export const cartHtml = () => {
+    const cartContainer = document.getElementById("cartContainer") as HTMLDivElement;
+
+    const cartHeader = document.createElement("section");
+    const cartPriceSummary = document.createElement("section");
+    const totalHeader = document.createElement("div");
+    const cartBttn = document.createElement("div");
+
+    const cartSpanContainer = document.createElement("div");
+    const cartSpan1 = document.createElement("span");
+    const cartSpan2 = document.createElement("span");
+
+    const cartTitle = document.createElement("h2");
+    const totalText = document.createElement("h3");
+    const checkoutLink = document.createElement("a");
+
+    cartHeader.id = "cartHeader";
+    cartSpanContainer.id = "cartSpanContainer";
+    cartSpan1.id = "cartSpan1";
+    cartSpan2.id = "cartSpan2";
+    cartPriceSummary.id = "cartPriceSummary";
+    totalHeader.id = "totalHeader";
+    cartTitle.id = "cartTitle";
+    totalText.id = "totalText";
+    cartBttn.id = "cartBttn";
+    checkoutLink.id = "ceckoutLink";
+
+    cartTitle.textContent = "Varukorg";
+    totalText.textContent = "Totalt";
+    checkoutLink.href = "#checkout";
+    checkoutLink.textContent = "Till kassan";
+
+    cartSpanContainer.append(cartSpan1, cartSpan2);
+    cartHeader.append(cartTitle, cartSpanContainer);
+    totalHeader.appendChild(totalText);
+    cartPriceSummary.appendChild(totalHeader);
+    cartBttn.appendChild(checkoutLink);
+    cartContainer.append(cartHeader, cartPriceSummary, cartBttn);
+}
