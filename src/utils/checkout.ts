@@ -1,4 +1,4 @@
-import { confirmationHtml } from "./createhtml";
+import { confirmationHtml } from "./createHtml";
 
 export const checkout = () => {
     const checkoutForm = document.getElementById("checkoutForm") as HTMLFormElement;

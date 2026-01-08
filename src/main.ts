@@ -1,5 +1,5 @@
 //import "./style.css";
-import { checkout } from "./checkout";
+import { checkout } from "./utils/checkout";
 import "./scss/main.scss";
 
 checkout();
