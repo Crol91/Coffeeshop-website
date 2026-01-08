@@ -2,4 +2,5 @@
 @forward "base/mixins";
 @forward "pages/checkout";
 @use "./pages/hero";
-@import "@fortawesome/fontawesome-free/css/all.min.css";
+@use "base/header";
+//@import "@fortawesome/fontawesome-free/css/all.min.css";

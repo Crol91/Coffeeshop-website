@@ -4,6 +4,7 @@
 /* ENDAST PÅBÖRJAD*/
 /* Landing page – Hero (mobile-first) */
 .landing-hero {
+  padding-top: 6.5rem; /* plats för navbar */
   min-height: 100svh;
   background-image: url("/src/assets/landningpage.jpg");
   background-size: cover;
