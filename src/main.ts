@@ -1,13 +1,12 @@
 //import "./style.css";
 import { initHamburgerNav } from "./hamburgerNav";
 import "./scss/main.scss";
-
-initHamburgerNav();
-checkout();
 import { cart } from "./cart/cart";
 import { checkout } from "./utils/checkout";
 import { cartHtml } from "./utils/createHtml";
 import "./scss/main.scss";
+
+initHamburgerNav();
 
 document.addEventListener("DOMContentLoaded", () => {
     const cartContainer = document.getElementById("cartContainer");
