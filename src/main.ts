@@ -1,7 +1,7 @@
 //import "./style.css";
 import { checkout } from "./checkout";
-import "./scss/main.scss";
 import { initHamburgerNav } from "./hamburgerNav";
+import "./scss/main.scss";
 
 initHamburgerNav();
 checkout();
