@@ -1,53 +1,54 @@
 /* Typography */
-    /* Fonts-sizes */
-    $p-fontSize: 1rem;
-    $small-font: 0.875rem;
+/* Fonts-sizes */
+$p-fontSize: 1rem;
+$small-font: 0.875rem;
 
-    $h1-fontSize: 1.75rem;
-    $h2-fontSize: 1.5rem;
-    $h3-fontSize: 1.25rem;
-    $h4-fontSize: 1.125rem;
-    $h5-fontSize: 1rem;
+$h1-fontSize: 1.75rem;
+$h2-fontSize: 1.5rem;
+$h3-fontSize: 1.25rem;
+$h4-fontSize: 1.125rem;
+$h5-fontSize: 1rem;
 
-    /* Font-family */
-    $p-fontFamily: "Inter", sans-serif;
-    $small-fontFamily: "Inter", sans-serif;
+/* Font-family */
+$p-fontFamily: "Inter", sans-serif;
+$small-fontFamily: "Inter", sans-serif;
 
-    $h1-fontFamily: "Ephesis", regular;
-    $h2-fontFamily: "Familjen Grotesk", sans-serif;
-    $h3-fontFamily: "Familjen Grotesk", sans-serif;
-    $h4-fontFamily: "Familjen Grotesk", sans-serif;
-    $h5-fontFamily:"Familjen Grotesk", sans-serif;
+$h1-fontFamily: "Ephesis", cursive;
+$h2-h5-fontFamily: "Familjen Grotesk", sans-serif;
 
-    /* Font-weight */
-    $weight-400: 400;
-    $weight-600: 600;
+/* Font-weight */
+$weight-400: 400;
+$weight-600: 600;
 
 /* Colors */
-$primary-color: #4D3328;
-$secondary-color: #F8F1E6;
-$accent-color: #FCE5C3;
-$menu-bg: #FFFFFF99;
+$primary-color: #4d3328;
+$secondary-color: #f8f1e6;
+$accent-color: #fce5c3;
+$menu-bg: #ffffff99;
 $hover: #846b60;
 
 /* Border */
 $border-radius: 20px;
 
 /* Spacing */
-    /* padding */
-    $p5: 5px;
-    $p10: 10px;
-    $p15: 15px;
-    $p20: 20px;
+/* padding */
+$p5: 5px;
+$p10: 10px;
+$p15: 15px;
+$p20: 20px;
 
-    /* margin */
-    $m5: 5px;
-    $m10: 10px;
-    $m15: 15px;
-    $m20: 20px;
+/* margin */
+$m5: 5px;
+$m10: 10px;
+$m15: 15px;
+$m20: 20px;
 
 /* Effects */
 $shadow-text: 0px 4px 4px #00000040;
 
 /* Breakpoints for media queries */
-$grid-breakpoints: (sm: 480px, md: 768px, lg: 800px);
+$grid-breakpoints: (
+  sm: 480px,
+  md: 768px,
+  lg: 800px,
+);
