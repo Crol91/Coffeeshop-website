@@ -2,9 +2,8 @@
 import { checkout } from "./utils/checkout";
 import "./scss/main.scss";
 
-<<<<<<< HEAD
 checkout();
-=======
+
 /*const burger = document.querySelector(".burger") as HTMLButtonElement;
 const nav = document.querySelector(".navBar") as HTMLElement;
 
@@ -49,4 +48,3 @@ if (burger && nav && overlay) {
     if (target.closest("a")) closeMenu();
   });
 }
->>>>>>> feature/landing-page-background
