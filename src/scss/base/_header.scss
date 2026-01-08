@@ -3,9 +3,7 @@
 /* HEADER (fixed) */
 .site-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto 0;
   z-index: 50;
 
   display: grid;
@@ -21,11 +19,9 @@
   justify-self: center;
   margin: 0;
   color: v.$primary-color;
-  font-family: v.$h1-fontFamily;
-  font-weight: v.$weight-400;
 }
 
-/* HAMBURGER (ska synas på ALLA storlekar) */
+/* HAMBURGER */
 .burger {
   background: none;
   border: none;
@@ -37,15 +33,16 @@
   gap: 6px;
 
   span {
-    display: block;
     width: 28px;
     height: 3px;
     background: v.$primary-color;
     border-radius: 2px;
+    transition: transform 200ms ease, opacity 200ms ease;
+    transform-origin: left center;
   }
 }
 
-/* Snabblänkar (höger) */
+/* Snabblänkar */
 .navActions {
   justify-self: end;
   display: flex;
@@ -57,32 +54,26 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   text-decoration: none;
   color: v.$primary-color;
-  font-family: v.$p-fontFamily;
-  font-size: v.$p-fontSize;
 }
 
-/* Ikon (om du använder <span> eller <i>) */
 .navAction__icon {
   font-size: 1.2rem;
   line-height: 1;
 }
 
-/* Text: göm på mobil + tablet */
 .navAction__text {
   display: none;
 }
 
-/* Text: visa på desktop */
 @media (min-width: 1024px) {
   .navAction__text {
     display: inline;
   }
 }
 
-/* OVERLAY bakom menyn */
+/* Overlay */
 .nav-overlay {
   position: fixed;
   inset: 0;
@@ -90,7 +81,7 @@
   z-index: 55;
 }
 
-/* MENYPANEL (off-canvas) */
+/* Off-canvas menu */
 .navBar {
   position: fixed;
   top: 0;
@@ -100,10 +91,9 @@
   width: min(280px, 80vw);
 
   background: rgba(255, 255, 255, 0.92);
-  padding: 5rem 1rem 1rem; /* plats för header */
+  padding: 5rem 1rem 1rem;
 
   z-index: 60;
-
   transform: translateX(-100%);
   transition: transform 200ms ease;
 
@@ -112,7 +102,6 @@
   }
 }
 
-/* Meny-lista i sidomenyn */
 .navItems ul {
   list-style: none;
   margin: 0;
@@ -126,20 +115,14 @@
   color: v.$primary-color;
 }
 
-/* Desktop: sidomeny kan fortfarande vara off-canvas (om ni vill). 
-   Men overlay ska inte synas när menyn är stängd ändå pga hidden i HTML. */
+/* Desktop */
 @media (min-width: 768px) {
   .nav-overlay {
     display: none !important;
   }
 }
 
-
-.burger span {
-  transition: transform 200ms ease, opacity 200ms ease;
-  transform-origin: left center;
-}
-
+/* Burger animation */
 .burger.is-open span:nth-child(1) {
   transform: rotate(45deg) translate(2px, -1px);
 }

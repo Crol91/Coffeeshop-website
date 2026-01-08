@@ -1,11 +1,10 @@
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
 
-/* ENDAST PÅBÖRJAD*/
 /* Landing page – Hero (mobile-first) */
 .landing-hero {
-  padding-top: 6.5rem; /* plats för navbar */
   min-height: 100svh;
+
   background-image: url("/src/assets/landningpage.jpg");
   background-size: cover;
   background-position: center;
@@ -13,11 +12,12 @@
 
   position: relative;
   display: flex;
-  align-items: flex-start; /* mobil: text startar uppifrån */
-  padding: 6.5rem 1rem 4.5rem; /* plats för navbar + lite luft */
-  color: #3b2a1f;
+  align-items: flex-start;
 
-  /* overlay för läsbarhet på mobil */
+  /* plats för fixed header + luft */
+  padding: 6.5rem v.$p15 4.5rem;
+
+  /* Overlay för läsbarhet */
   &::before {
     content: "";
     position: absolute;
@@ -28,72 +28,53 @@
   &__content {
     position: relative;
     z-index: 1;
+
     width: 100%;
     max-width: 34rem;
-    margin: 0 auto; /* mobil: centrerad block */
+    margin: 0 auto;
   }
 
- &__welcome {
-  margin: 0 0 0.5rem;
-  font-family: v.$h2-h5-fontFamily;
-  font-size: v.$h3-fontSize;
-  font-weight: v.$weight-600;
-}
+  /* Typografi kommer från global layout (h3/h1/p),
+     här sätter vi bara spacing + ev vikt/effekt */
+  &__welcome {
+    margin: 0 0 v.$m10;
+    font-weight: v.$weight-600;
+  }
 
-&__title {
-  margin: 0 0 v.$m15;
-  font-family: v.$h1-fontFamily;
-  font-weight: v.$weight-600;
+  &__title {
+    margin: 0 0 v.$m15;
+    text-shadow: v.$shadow-text;
 
-  font-size: clamp(
-    v.$h1-fontSize,
-    9vw,
-    3.2rem
-  );
-
-  line-height: 1.8;
-}
-
+    /* Om ni vill ha större title än global h1 på större skärmar: */
+    font-size: clamp(v.$h1-fontSize, 9vw, 3.2rem);
+    line-height: 1.05;
+  }
 
   &__subtitle {
-    margin: 0 0 1.5rem;
-    font-size: 1rem;
-    line-height: 1.5;
+    margin: 0 0 v.$m20;
     max-width: 40ch;
   }
 
-&__cta {
-  @include m.bttnDesignPrimary();
-  width: 100%;
-  max-width: 18rem;
-  padding: 0.95rem 1.5rem;
-}
+  &__cta {
+    @include m.bttnDesignPrimary();
 
-/* går ev att använda 
-&__cta {
-  @include m.bttnDesignPrimary(
-    $font-size: 1rem,
-    $border-radius: 999px
-  );
-  display: inline-block;
-  width: 100%;          
-  max-width: 18rem;
-  padding: 0.95rem 1.5rem;
-  border: 0;
-  cursor: pointer;
-  text-decoration: none;
- */
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
 
-
+    width: 100%;
+    max-width: 18rem;
+    padding: 0.95rem 1.5rem;
+  }
 }
 
 /* Tablet och uppåt */
-@media (min-width: 768px) {
+@media (min-width: map-get(v.$grid-breakpoints, md)) {
   .landing-hero {
     align-items: center;
-    padding: 6rem 2rem 4rem;
+    padding: 6rem v.$p20 4rem;
 
-    /* på större skärm kan overlay vara mer “vänster-fade” */
     &::before {
       background: linear-gradient(
         90deg,
@@ -109,15 +90,14 @@
     }
 
     &__cta {
-      width: auto; /* desktop: inte full bredd */
+      width: auto;
     }
   }
 }
 
-/* Desktop och uppåt (text mer åt vänster som i din bild) */
-@media (min-width: 1024px) {
+/* Desktop och uppåt */
+@media (min-width: map-get(v.$grid-breakpoints, lg)) {
   .landing-hero {
     padding-left: clamp(2rem, 6vw, 5rem);
   }
 }
-
