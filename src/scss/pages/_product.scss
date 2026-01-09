@@ -1,7 +1,7 @@
 @use "../base/mixins" as mix;
 @use "../base/variables" as var;
 
-.productPageImg {
+.productPageContent {
   min-height: 100svh;
 
   background-image: url("/src/assets/productpage.jpg");
@@ -29,7 +29,6 @@
     z-index: 1;
 
     width: 100%;
-    max-width: 34rem;
     margin: 3rem;
   }
 
