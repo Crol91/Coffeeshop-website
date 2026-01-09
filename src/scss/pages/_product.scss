@@ -21,7 +21,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.35);
   }
 
   &__content {
@@ -30,7 +30,7 @@
 
     width: 100%;
     max-width: 34rem;
-    margin: 0 auto;
+    margin: 3rem;
   }
 
   &__title {
