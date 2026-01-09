@@ -9,9 +9,10 @@
 }
 
 /* main bttn ex. "Handla nu"-button*/
-@mixin bttnDesignPrimary ($background:#4D3328, $color: #FCE5C3, $font-size: 1.5rem, $font-weight: 600, $border-radius: 20px, $shadow: 0px 0px 10px #FFA50280){
+@mixin bttnDesignPrimary ($background:#4D3328, $color: #FCE5C3, $font-family: ("Inter", sans-serif), $font-size: 1.5rem, $font-weight: 600, $border-radius: 20px, $shadow: 0px 0px 10px #FFA50280){
     background-color: $background;
     color: #FCE5C3;
+    font-family: $font-family;
     font-size: $font-size;
     font-weight: $font-weight;
     border-radius: $border-radius;
