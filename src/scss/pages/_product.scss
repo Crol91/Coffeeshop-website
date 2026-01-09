@@ -1,0 +1,43 @@
+@use "../base/mixins" as mix;
+@use "../base/variables" as var;
+
+.productPageImg {
+  min-height: 100svh;
+
+  background-image: url("/src/assets/productpage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+
+  /* plats för fixed header + luft */
+  padding: 6.5rem v.$p15 4.5rem;
+
+  /* Overlay för läsbarhet */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 34rem;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 0 0 v.$m15;
+    text-shadow: v.$shadow-text;
+
+    font-size: clamp(v.$h1-fontSize, 9vw, 3.2rem);
+    line-height: 1.05;
+  }
+}
