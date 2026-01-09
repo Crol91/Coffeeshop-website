@@ -14,7 +14,7 @@
   align-items: flex-start;
 
   /* plats för fixed header + luft */
-  padding: 6.5rem v.$p15 4.5rem;
+  padding: 6.5rem var.$p15 4.5rem;
 
   /* Overlay för läsbarhet */
   &::before {
@@ -34,10 +34,10 @@
   }
 
   &__title {
-    margin: 0 0 v.$m15;
-    text-shadow: v.$shadow-text;
+    margin: 0 0 var.$m15;
+    text-shadow: var.$shadow-text;
 
-    font-size: clamp(v.$h1-fontSize, 9vw, 3.2rem);
+    font-size: clamp(var.$h1-fontSize, 9vw, 3.2rem);
     line-height: 1.05;
   }
 }
