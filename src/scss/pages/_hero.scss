@@ -66,10 +66,10 @@
     width: 100%;
     max-width: 18rem;
     padding: 0.95rem 1.5rem;
-    &:hover{
-    background-color: v.$hover;
-    color: v.$secondary-color;
-  }
+    &:hover {
+      background-color: v.$hover;
+      color: v.$secondary-color;
+    }
   }
 }
 
@@ -82,8 +82,8 @@
     &::before {
       background: linear-gradient(
         90deg,
-        rgba(255, 255, 255, 0.70) 0%,
-        rgba(255, 255, 255, 0.40) 45%,
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(255, 255, 255, 0.4) 45%,
         rgba(0, 0, 0, 0.05) 100%
       );
     }
