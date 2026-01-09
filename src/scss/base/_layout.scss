@@ -48,3 +48,17 @@ h5 {
 body {
   background-color: #efefef;
 }
+
+label {
+  font-size: var.$h3-fontSize;
+  font-family: var.$h2-h5-fontFamily;
+  font-weight: var.$weight-400;
+  color: var.$primary-color;
+}
+
+a{
+  font-size: var.$p-fontSize;
+  font-family: var.$p-fontFamily;
+  font-weight: var.$weight-400;
+  color: var.$primary-color;
+}

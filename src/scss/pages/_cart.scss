@@ -55,14 +55,13 @@
         padding: var.$p20;
     }
     #cartBttn{
-        @include mix.bttnDesignPrimary;
-        padding: var.$p20;
-        margin: var.$m20;
-        max-width: 200px;
+        position: absolute;
+        width: 100%;
+        @include mix.flex($justify:center);
         a {
             text-decoration: none;
-            font-size: var.$h2-fontSize;
-            color: var.$secondary-color;
+            @include mix.bttnDesignPrimary;
+            padding: var.$p20;
         }
     }
 }
