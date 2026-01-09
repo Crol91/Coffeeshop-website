@@ -7,19 +7,44 @@
   </head>
   <body>
     <!-- navbar -->
-    <header>
-      <h1>Coffeeshop</h1>
-      <nav class="navBar">
+    <header class="site-header">
+      <!-- Hamburger: alltid synlig -->
+      <button class="burger" aria-label="Öppna meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <h1 class="site-logo">Coffeeshop</h1>
+
+      <!-- Snabblänkar (IKON + text på desktop, bara ikon på mobil/tablet) -->
+      <div class="navActions">
+        <a class="navAction" href="#favourites" aria-label="Favoriter">
+          <span class="navAction__icon">❤</span>
+          <span class="navAction__text">Favoriter</span>
+        </a>
+
+        <a class="navAction" href="#login" aria-label="Logga in">
+          <span class="navAction__icon">👤</span>
+          <span class="navAction__text">Logga in</span>
+        </a>
+
+        <a class="navAction" href="#cart" id="cartLink" aria-label="Varukorg">
+          <span class="navAction__icon">🛒</span>
+          <span class="navAction__text">Varukorg</span>
+        </a>
+      </div>
+      <div class="nav-overlay" hidden></div>
+
+      <!-- Sidomeny: här ska INTE snabblänkarna ligga -->
+      <nav class="navBar" aria-hidden="true">
         <div class="navItems">
-          <ul> 
-          <li><a href="#favourites">Favoriter</a></li>
-          <li><a href="#login">Logga in</a></li>
-          <li><a href="#cart">Varukorg</a></li>
+          <ul>
+            <li><a href="#products">Produkter</a></li>
+            <li><a href="#about">Om oss</a></li>
+            <li><a href="#contact">Kontakt</a></li>
           </ul>
         </div>
-    </nav>
+      </nav>
     </header>
-    <h3>Njut av vårat bästsäljande kaffe</h3>
     <!-- taste filter -->
     <button id="showFilter">Filtrera</button>
 

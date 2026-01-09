@@ -13,14 +13,10 @@ body {
     margin-bottom: var.$p20;
     @include mix.flex($direction:column, $align:center);
     h2{
-        font-size: var.$h2-fontSize;
         font-weight: var.$weight-600;
-        color: var.$primary-color;
     }
     h3{
-        font-size: var.$h3-fontSize;
         font-weight:var.$weight-600;
-        color: var.$primary-color;
     }
     p{
         color: var.$primary-color;
@@ -46,8 +42,6 @@ nav{
             margin: 0;
         }
         h1 {
-            font-size: var.$h1-fontSize;
-            color: var.$primary-color;
             filter: drop-shadow(var.$shadow-text);
             @include mix.respond(md) {
             left: 50%;
