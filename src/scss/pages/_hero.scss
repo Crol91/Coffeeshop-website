@@ -38,6 +38,8 @@
      här sätter vi bara spacing + ev vikt/effekt */
   &__welcome {
     margin: 0 0 v.$m10;
+    font-family: v.$h2-h5-fontFamily;
+    font-size: v.$h3-fontSize;
     font-weight: v.$weight-600;
   }
 
