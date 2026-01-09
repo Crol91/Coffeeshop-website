@@ -66,6 +66,10 @@
     width: 100%;
     max-width: 18rem;
     padding: 0.95rem 1.5rem;
+    &:hover{
+    background-color: v.$hover;
+    color: v.$secondary-color;
+  }
   }
 }
 
