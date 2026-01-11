@@ -1,7 +1,9 @@
-@use "../base/variables" as v;
-@use "../base/mixins" as m;
+@use "../base/variables" as var;
+@use "../base/mixins" as mix;
+@use "sass:map";
 
 /* Landing page – Hero (mobile-first) */
+
 .landing-hero {
   min-height: 100svh;
 
@@ -15,7 +17,7 @@
   align-items: flex-start;
 
   /* plats för fixed header + luft */
-  padding: 6.5rem v.$p15 4.5rem;
+  padding: 6.5rem var.$p15 4.5rem;
 
   /* Overlay för läsbarhet */
   &::before {
@@ -37,28 +39,28 @@
   /* Typografi kommer från global layout (h3/h1/p),
      här sätter vi bara spacing + ev vikt/effekt */
   &__welcome {
-    margin: 0 0 v.$m10;
-    font-family: v.$h2-h5-fontFamily;
-    font-size: v.$h3-fontSize;
-    font-weight: v.$weight-600;
+    margin: 0 0 var.$m10;
+    font-family: var.$h2-h5-fontFamily;
+    font-size: var.$h3-fontSize;
+    font-weight: var.$weight-600;
   }
 
   &__title {
-    margin: 0 0 v.$m15;
-    text-shadow: v.$shadow-text;
+    margin: 0 0 var.$m15;
+    text-shadow: var.$shadow-text;
 
     /* Om ni vill ha större title än global h1 på större skärmar: */
-    font-size: clamp(v.$h1-fontSize, 9vw, 3.2rem);
+    font-size: clamp(var.$h1-fontSize, 9vw, 3.2rem);
     line-height: 1.05;
   }
 
   &__subtitle {
-    margin: 0 0 v.$m20;
+    margin: 0 0 var.$m20;
     max-width: 40ch;
   }
 
   &__cta {
-    @include m.bttnDesignPrimary();
+    @include mix.bttnDesignPrimary();
 
     display: inline-block;
     text-decoration: none;
@@ -69,17 +71,17 @@
     max-width: 18rem;
     padding: 0.95rem 1.5rem;
     &:hover {
-      background-color: v.$hover;
-      color: v.$secondary-color;
+      background-color: var.$hover;
+      color: var.$secondary-color;
     }
   }
 }
 
 /* Tablet och uppåt */
-@media (min-width: map-get(v.$grid-breakpoints, md)) {
+@media (min-width: map.get(var.$grid-breakpoints, md)) {
   .landing-hero {
     align-items: center;
-    padding: 6rem v.$p20 4rem;
+    padding: 6rem var.$p20 4rem;
 
     &::before {
       background: linear-gradient(
@@ -102,7 +104,7 @@
 }
 
 /* Desktop och uppåt */
-@media (min-width: map-get(v.$grid-breakpoints, lg)) {
+@media (min-width: map-get(var.$grid-breakpoints, lg)) {
   .landing-hero {
     padding-left: clamp(2rem, 6vw, 5rem);
   }
