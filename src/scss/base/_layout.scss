@@ -78,7 +78,7 @@ a{
 }
 
 /* Media queries */
-@media (min-width: 768px){
+@include respond(md){
     .navAction__text {
     display: inline !important;
     font-size: $small-font;
@@ -96,5 +96,5 @@ a{
 
 }
 
-@media (min-width: 800px){
+@include respond(lg){
 }

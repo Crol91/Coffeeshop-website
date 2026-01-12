@@ -44,12 +44,7 @@
   }
 
   &__title {
-    margin: 0 0 $m15;
-    text-shadow: $shadow-text;
-
-    /* Om ni vill ha större title än global h1 på större skärmar: */
-    font-size: clamp($h1-fontSize, 9vw, 3.2rem);
-    line-height: 1.05;
+    @include sizeTitle;
   }
 
   &__subtitle {
@@ -76,7 +71,7 @@
 }
 
 /* Tablet och uppåt */
-@media (min-width: map.get($grid-breakpoints, md)) {
+@include respond(md) {
   .landing-hero {
     align-items: center;
     padding: 6rem $p20 4rem;
@@ -102,7 +97,7 @@
 }
 
 /* Desktop och uppåt */
-@media (min-width: map-get($grid-breakpoints, lg)) {
+@include respond(lg) {
   .landing-hero {
     padding-left: clamp(2rem, 6vw, 5rem);
   }
