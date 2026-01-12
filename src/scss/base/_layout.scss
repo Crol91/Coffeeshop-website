@@ -88,12 +88,10 @@ a{
     display: none !important;
   }
   #cartContainer{
-    .show{
-        width: 40%;
-        
+    &.show{
+        width: 40% !important;
     }
   }
-
 }
 
 @include respond(lg){

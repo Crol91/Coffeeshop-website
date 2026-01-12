@@ -51,6 +51,19 @@
     #cartPriceSummary{
         padding: $p20;
     }
+    .cartItem {
+        @include flex($align: center);
+        gap: 15px;
+        .cartItemControls{
+            @include flex($align: center);
+            gap: 10px;
+            button{
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
     #cartBttn{
         position: absolute;
         width: 100%;

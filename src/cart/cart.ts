@@ -1,7 +1,8 @@
-export const cart = (cartSpanContainer: HTMLDivElement) => {
+export const cart = () => {
     const cartContainer = document.getElementById("cartContainer");
     const cartLink = document.getElementById("cartLink");
-    if(!cartContainer) return;
+    const cartSpanContainer = document.getElementById("cartSpanContainer");
+    if(!cartContainer || !cartLink || !cartSpanContainer) return;
 
     cartLink?.addEventListener("click", () => {
         cartContainer.classList.add("show");

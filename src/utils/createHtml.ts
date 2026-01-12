@@ -1,3 +1,5 @@
+import type { CartItem } from "../types/CartItem";
+
 export const confirmationHtml = (firstName:string, email:string): HTMLDivElement => {
         const checkoutFormSection = document.getElementById("checkoutFormSection") as HTMLDivElement;
 
@@ -19,8 +21,39 @@ export const confirmationHtml = (firstName:string, email:string): HTMLDivElement
         return orderConfirmation;
 }
 
-export const cartHtml = () => {
+export const cartItemHtml = (item:CartItem): HTMLDivElement => {
+    const itemEl = document.createElement("div");
+    itemEl.className = "cartItem";
+    itemEl.dataset.id = item.id;
+
+    const name = document.createElement("p");
+    name.textContent = item.name;
+
+    const controls = document.createElement("div");
+    controls.className = "cartItemControls";
+
+    const minus = document.createElement("button");
+    minus.textContent = "-";
+
+    const quantity = document.createElement("span");
+    quantity.textContent = item.quantity.toString();
+
+    const plus = document.createElement("button");
+    plus.textContent = "+";
+
+    minus.className = "cartMinus";
+    plus.className = "cartPlus";
+    quantity.className = "cartQuantity";
+
+    controls.append(minus, quantity, plus);
+    itemEl.append(name, controls);
+
+    return itemEl;
+}
+
+export const cartHtml = (cartItems: CartItem[]) => {
     const cartContainer = document.getElementById("cartContainer") as HTMLDivElement;
+    if (!cartContainer) return;
 
     const cartHeader = document.createElement("section");
     const cartPriceSummary = document.createElement("section");
@@ -53,6 +86,12 @@ export const cartHtml = () => {
 
     cartSpanContainer.append(cartSpan1, cartSpan2);
     cartHeader.append(cartTitle, cartSpanContainer);
+
+    cartItems.forEach(item => {
+            const itemEl = cartItemHtml(item);
+            cartPriceSummary.appendChild(itemEl);
+        });
+        
     totalHeader.appendChild(totalText);
     cartPriceSummary.appendChild(totalHeader);
     cartBttn.appendChild(checkoutLink);
