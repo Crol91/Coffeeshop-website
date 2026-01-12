@@ -1,6 +1,6 @@
-@use "../base/mixins" as mix;
-@use "../base/variables" as var;
-@use "../base/layout" as layout;
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+@use "../base/layout" as *;
 
 body {
     background-color: #efefef;
@@ -10,21 +10,17 @@ body {
 #app{
     width: 100%;
     text-align: left;
-    margin-bottom: var.$p20;
-    @include mix.flex($direction:column, $align:center);
+    margin-bottom: $p20;
+    @include flex($direction:column, $align:center);
     h2{
-        font-weight: var.$weight-600;
+        font-weight: $weight-600;
     }
     h3{
-        font-weight:var.$weight-600;
-    }
-    p{
-        color: var.$primary-color;
+        font-weight:$weight-600;
     }
     a{
-        color: var.$primary-color;
         text-decoration: none;
-        @include mix.flex($justify:center, $align:center);
+        @include flex($justify:center, $align:center);
         gap: 0.5em;
     }
 }
@@ -32,48 +28,47 @@ nav{
     background-color: white;
     width: 100%;
     #navBar{
-        padding: var.$p20;
+        padding: $p20;
         position: relative;
-        @include mix.flex($direction: column, $align:center);
-        @include mix.respond(md){
+        @include flex($direction: column, $align:center);
+        @include respond(md){
             flex-direction: row;
         }
         p{
             margin: 0;
         }
-        h1 {
-            filter: drop-shadow(var.$shadow-text);
-            @include mix.respond(md) {
+        .site-logo {
+            filter: drop-shadow($shadow-text);
+            @include respond(md) {
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
             position: absolute; 
             }
         }
-
     }
 }
 fieldset{
-    @include mix.flex($direction: column);
+    @include flex($direction: column);
     border-radius: 10px;
-    padding: var.$p20;
+    padding: $p20;
     width: 90%;
     border: 1px solid lightgrey;
     
     legend {
-        padding: var.$p5;
+        padding: $p5;
         color: rgb(170, 170, 170);
-        font-family: var.$p-fontFamily;
+        font-family: $p-fontFamily;
     }
 
     label{
-        font-size: var.$h4-fontSize;
-        font-weight: var.$weight-600;
-        color: var.$primary-color;
-        margin-top: var.$m10;
+        font-size: $h4-fontSize;
+        font-weight: $weight-600;
+        color: $primary-color;
+        margin-top: $m10;
     }
     input{
-        padding: var.$p20;
+        padding: $p20;
         border-radius: 10px;
         border: 1px solid lightgrey;
         font-size: 1rem;
@@ -85,8 +80,8 @@ fieldset{
 
 #cartSection{
     background-color: rgb(235, 235, 235);
-    padding: var.$p20;
-    margin: var.$m20;
+    padding: $p20;
+    margin: $m20;
     max-width: 700px;
     width: 80%;
     border-radius: 25px;
@@ -107,11 +102,11 @@ fieldset{
     background-color: rgb(235, 235, 235);
     max-width: 700px;
     width: 80%;
-    padding: var.$p20;
+    padding: $p20;
     border-radius: 25px;
     border: 1px solid rgb(204, 204, 204);
     #paymentMenuText{
-        margin: var.$m20;
+        margin: $m20;
         h2{
             margin: 0;
         }
@@ -120,24 +115,24 @@ fieldset{
         }
     }
     #checkoutForm{
-        @include mix.flex($direction: column, $justify:center, $align:center);
+        @include flex($direction: column, $justify:center, $align:center);
     
         #submitOrder {
-            @include mix.bttnDesignPrimary;
-            margin: var.$m15;
-            padding: var.$p15;
+            @include bttnDesignPrimary;
+            margin: $m15;
+            padding: $p15;
             cursor: pointer;
             border: none;
             &:hover{
-                background-color: var.$hover;
+                background-color: $hover;
             }
         }
     }
     #orderConfirmation{
         position: fixed;
         background-color: white;
-        padding: var.$p20;
-        border-radius: var.$border-radius;
+        padding: $p20;
+        border-radius: $border-radius;
         top: 50%;
         left: 50%;
         transform:translate(-50%, -50%);

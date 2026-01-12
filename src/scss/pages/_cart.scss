@@ -1,6 +1,6 @@
-@use "../base/mixins" as mix;
-@use "../base/variables" as var;
-@use "../base/layout" as layout;
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+@use "../base/layout" as *;
 
 #cartContainer{
     position: absolute;
@@ -16,18 +16,15 @@
     &.show{
     width: 90%;
     transform: translateX(0);
-    @include mix.respond(md){
-        width: 40%;
-        }
     }
     &.hide{
         width: 0%;
         transform: translateX(100%);
     }
     #cartHeader{
-        @include mix.flex($justify: space-between, $align: center);
-        background-color: var.$secondary-color;
-        padding: var.$p20;
+        @include flex($justify: space-between, $align: center);
+        background-color: $secondary-color;
+        padding: $p20;
         #cartSpanContainer{
             position: relative;
             height: 27.5px;
@@ -39,7 +36,7 @@
                 top: 50%;
                 left: 50%;
                 border-radius: 3px;
-                background-color: var.$primary-color;
+                background-color: $primary-color;
                 transform-origin: center;
                 cursor: pointer;
             }
@@ -52,16 +49,16 @@
         }
     }
     #cartPriceSummary{
-        padding: var.$p20;
+        padding: $p20;
     }
     #cartBttn{
         position: absolute;
         width: 100%;
-        @include mix.flex($justify:center);
+        @include flex($justify:center);
         a {
             text-decoration: none;
-            @include mix.bttnDesignPrimary;
-            padding: var.$p20;
+            @include bttnDesignPrimary;
+            padding: $p20;
         }
     }
 }

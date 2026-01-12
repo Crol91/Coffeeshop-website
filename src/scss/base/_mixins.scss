@@ -26,6 +26,13 @@
     filter: drop-shadow($shadow);
 }
 
+@mixin sizeTitle($margin:0 0 $m15, $text-shadow:$shadow-text, $font-size:clamp($h1-fontSize, 9vw, 3.2rem), $line-height:1.05){
+    margin: $margin;
+    text-shadow: $text-shadow;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
 /* mixin media query */
 @mixin respond($bp) {
     @media (min-width: map-get($grid-breakpoints, $bp)){

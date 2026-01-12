@@ -1,47 +1,61 @@
-@use "../base/mixins" as mix;
-@use "../base/variables" as var;
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
 
 // Global font styling
 p {
-  font-size: var.$p-fontSize;
-  font-family: var.$p-fontFamily;
-  font-weight: var.$weight-400;
-  color: var.$primary-color;
+  font-size: $p-fontSize;
+  font-family: $p-fontFamily;
+  font-weight: $weight-400;
+  color: $primary-color;
+}
+
+.site-logo {
+ position: absolute;
+ left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: $primary-color;
+  font-family: $h1-fontFamily;
+  text-decoration: none;
+  font-size: 2.2rem; // 🔥 
+  &:hover {
+  opacity: 0.85;
+}
 }
 
 h1 {
-  font-size: var.$h1-fontSize;
-  font-family: var.$h1-fontFamily;
-  font-weight: var.$weight-400;
-  color: var.$primary-color;
+  font-size: $h1-fontSize;
+  font-family: $h1-fontFamily;
+  font-weight: $weight-400;
+  color: $primary-color;
 }
 
 h2 {
-  font-size: var.$h2-fontSize;
-  font-family: var.$h2-h5-fontFamily;
-  font-weight: var.$weight-400;
-  color: var.$primary-color;
+  font-size: $h2-fontSize;
+  font-family: $h2-h5-fontFamily;
+  font-weight: $weight-400;
+  color: $primary-color;
 }
 
 h3 {
-  font-size: var.$h3-fontSize;
-  font-family: var.$h2-h5-fontFamily;
-  font-weight: var.$weight-400;
-  color: var.$primary-color;
+  font-size: $h3-fontSize;
+  font-family: $h2-h5-fontFamily;
+  font-weight: $weight-400;
+  color: $primary-color;
 }
 
 h4 {
-  font-size: var.$h4-fontSize;
-  font-family: var.$h2-h5-fontFamily;
-  font-weight: var.$weight-400;
-  color: var.$primary-color;
+  font-size: $h4-fontSize;
+  font-family: $h2-h5-fontFamily;
+  font-weight: $weight-400;
+  color: $primary-color;
 }
 
 h5 {
-  font-size: var.$h5-fontSize;
-  font-family: var.$h2-h5-fontFamily;
-  font-weight: var.$weight-400;
-  color: var.$primary-color;
+  font-size: $h5-fontSize;
+  font-family: $h2-h5-fontFamily;
+  font-weight: $weight-400;
+  color: $primary-color;
 }
 
 // Global colors
@@ -50,15 +64,37 @@ body {
 }
 
 label {
-  font-size: var.$h3-fontSize;
-  font-family: var.$h2-h5-fontFamily;
-  font-weight: var.$weight-400;
-  color: var.$primary-color;
+  font-size: $h3-fontSize;
+  font-family: $h2-h5-fontFamily;
+  font-weight: $weight-400;
+  color: $primary-color;
 }
 
 a{
-  font-size: var.$p-fontSize;
-  font-family: var.$p-fontFamily;
-  font-weight: var.$weight-400;
-  color: var.$primary-color;
+  font-size: $p-fontSize;
+  font-family: $p-fontFamily;
+  font-weight: $weight-400;
+  color: black;
+}
+
+/* Media queries */
+@media (min-width: 768px){
+    .navAction__text {
+    display: inline !important;
+    font-size: $small-font;
+  }
+
+    .nav-overlay {
+    display: none !important;
+  }
+  #cartContainer{
+    .show{
+        width: 40%;
+        
+    }
+  }
+
+}
+
+@media (min-width: 800px){
 }

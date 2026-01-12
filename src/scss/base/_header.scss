@@ -1,4 +1,4 @@
-@use "./variables" as var;
+@use "./variables" as *;
 
 /* HEADER (fixed) */
 .site-header {
@@ -10,23 +10,9 @@
   grid-template-columns: auto 1fr auto;
   align-items: center;
 
-  padding: var.$p15;
-  background: var.$menu-bg;
+  padding: $p15;
+  background: $menu-bg;
   backdrop-filter: blur(6px);
-}
-
-.site-logo {
- position: absolute;
- left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
-  color: var.$primary-color;
-  font-family: var.$h1-fontFamily;
-  text-decoration: none;
-  font-size: 2.2rem; // 🔥 
-  &:hover {
-  opacity: 0.85;
-}
 }
 
 /* HAMBURGER */
@@ -57,7 +43,7 @@
   justify-self: end;
   display: flex;
   align-items: center;
-  gap: var.$m10;
+  gap: $m10;
 }
 
 .navAction {
@@ -80,16 +66,8 @@
 }
 }
 
-
 .navAction__text {
   display: none;
-}
-
-@media (min-width: 768px) {
-  .navAction__text {
-    display: inline;
-    font-size: var.$small-font;
-  }
 }
 
 /* Overlay */
@@ -126,20 +104,14 @@
   margin: 0;
   padding: 0;
   display: grid;
-  gap: var.$m10;
+  gap: $m10;
 }
 
 .navItems a {
   text-decoration: none;
-  color: var.$primary-color;
+  color: $primary-color;
 }
 
-/* Desktop */
-@media (min-width: 768px) {
-  .nav-overlay {
-    display: none !important;
-  }
-}
 /* Burger animation */
 .burger.is-open span:nth-child(1) {
   transform: rotate(45deg) translate(2px, -1px);

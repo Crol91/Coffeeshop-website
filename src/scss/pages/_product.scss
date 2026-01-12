@@ -1,5 +1,5 @@
-@use "../base/mixins" as mix;
-@use "../base/variables" as var;
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
 
 .productPageContent {
   min-height: 100svh;
@@ -14,7 +14,7 @@
   align-items: flex-start;
 
   /* plats för fixed header + luft */
-  padding: 6.5rem var.$p15 4.5rem;
+  padding: 6.5rem $p15 4.5rem;
 
   /* Overlay för läsbarhet */
   &::before {
@@ -33,10 +33,6 @@
   }
 
   &__title {
-    margin: 0 0 var.$m15;
-    text-shadow: var.$shadow-text;
-
-    font-size: clamp(var.$h1-fontSize, 9vw, 3.2rem);
-    line-height: 1.05;
+    @include sizeTitle;
   }
 }
