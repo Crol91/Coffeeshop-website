@@ -16,5 +16,5 @@ export let cartItems: CartItem[] = [
         name: "Vanilla",
         price: 199,
         quantity: 1
-    }
+    },
 ];

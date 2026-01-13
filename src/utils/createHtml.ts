@@ -87,7 +87,7 @@ export const cartHtml = (cartItems: CartItem[]) => {
     // Create sections for header, price summary and checkout button
     const cartHeader = document.createElement("section");
     const cartPriceSummary = document.createElement("section");
-    const totalHeader = document.createElement("div");
+    const totalContainer = document.createElement("div");
     const cartBttn = document.createElement("div");
 
     // Create container for cart close button
@@ -95,36 +95,42 @@ export const cartHtml = (cartItems: CartItem[]) => {
     const cartCloseSpan1 = document.createElement("span");
     const cartCloseSpan2 = document.createElement("span");
 
+    // Create Cart title, "Total" text, and link to the checkout page
     const cartTitle = document.createElement("h2");
     const totalText = document.createElement("h3");
     const checkoutLink = document.createElement("a");
 
+    // Assign IDs for styling and later DOM reference
     cartHeader.id = "cartHeader";
     cartCloseContainer.id = "cartCloseContainer";
     cartCloseSpan1.id = "cartCloseSpan1";
     cartCloseSpan2.id = "cartCloseSpan2";
     cartPriceSummary.id = "cartPriceSummary";
-    totalHeader.id = "totalHeader";
+    totalContainer.id = "totalHeader";
     cartTitle.id = "cartTitle";
     totalText.id = "totalText";
     cartBttn.id = "cartBttn";
     checkoutLink.id = "ceckoutLink";
 
+    // Set text for cart heading, total text, checkout link and href for checkout link
     cartTitle.textContent = "Varukorg";
     totalText.textContent = "Totalt";
     checkoutLink.href = "checkout";
     checkoutLink.textContent = "Till kassan";
 
+    // Append spans to container close and heading + close container to the cart header
     cartCloseContainer.append(cartCloseSpan1, cartCloseSpan2);
     cartHeader.append(cartTitle, cartCloseContainer);
 
+    // Loop thourgh cart items and append each to the price summary
     cartItems.forEach(item => {
             const itemEl = cartItemHtml(item);
             cartPriceSummary.appendChild(itemEl);
         });
-        
-    totalHeader.appendChild(totalText);
-    cartPriceSummary.appendChild(totalHeader);
+    
+    // Append total and checkout button
+    totalContainer.appendChild(totalText);
+    cartPriceSummary.appendChild(totalContainer);
     cartBttn.appendChild(checkoutLink);
     cartContainer.append(cartHeader, cartPriceSummary, cartBttn);
 }
