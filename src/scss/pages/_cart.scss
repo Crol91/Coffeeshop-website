@@ -25,7 +25,7 @@
         @include flex($justify: space-between, $align: center);
         background-color: $secondary-color;
         padding: $p20;
-        #cartSpanContainer{
+        #cartCloseContainer{
             position: relative;
             height: 27.5px;
             width: 27.5px;
@@ -40,10 +40,10 @@
                 transform-origin: center;
                 cursor: pointer;
             }
-            #cartSpan1{
+            #cartCloseSpan1{
                 transform: translate(-50%, -50%) rotate(45deg);
             }
-            #cartSpan2{
+            #cartCloseSpan2{
                 transform: translate(-50%, -50%) rotate(-45deg);
             }
         }
