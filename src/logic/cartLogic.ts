@@ -1,6 +1,8 @@
 import type { CartItem } from "../types/CartItem";
 
 export const attachCartLogic = (cartItems: CartItem[]) => {
+    updateTotal(cartItems);
+    
 cartItems.forEach(item => {
     const itemEl = document.querySelector(`.cartItem[data-id="${item.id}"]`) as HTMLDivElement;
     if(!itemEl) return;
