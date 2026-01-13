@@ -1,3 +1,7 @@
+// Handles opening and closing of the shopping cart:
+// - Opens cart when cart link is clicked
+// - Closes cart when close button is clicked
+// - Automatically closes cart if the hamburger menu opens and vice versa
 export const cart = () => {
     const cartContainer = document.getElementById("cartContainer");
     const cartLink = document.getElementById("cartLink");
