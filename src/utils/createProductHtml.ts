@@ -24,7 +24,7 @@ function createProductCard(coffee: Coffee): HTMLElement {
         <div class="stock-status ${
           coffee.inStock ? "in-stock" : "out-of-stock"
         }">
-        <span class="inStockCircle"></span>
+        <span class="stockCircle"></span>
         <span>${coffee.inStock ? "Finns i lager" : "Finns ej i lager"}</span>
             </div>
             <button class="add-to-cart">Lägg i varukorgen
