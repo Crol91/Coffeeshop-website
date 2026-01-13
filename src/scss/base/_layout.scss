@@ -77,6 +77,36 @@ a{
   color: black;
 }
 
+/* Cart items styling */
+.cartItem {
+  @include flex($justify: space-between, $align: center);
+    padding: 10px;
+    border: 1px solid rgb(239, 239, 239);
+    margin: $p10;
+    border-radius: $border-radius;
+    .cartItemControls{
+      @include flex($align: center);
+      font-family: $p-fontFamily;
+      gap: 5px;
+      button{
+        background: none;
+        border: none;
+        cursor: pointer;
+        svg {
+          display: block;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+    .thumbnail {
+      width: 20%;
+      min-width: 75px;
+      border-radius: $border-radius;
+      margin:$m10;
+    }
+}
+
 /* Media queries */
 @include respond(md){
     .navAction__text {
