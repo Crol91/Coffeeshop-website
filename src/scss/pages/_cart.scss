@@ -8,18 +8,23 @@
     top: 0;
     right: 0;
     z-index: 100;
-    width: 0%;
     height: 100vh;
+    width: 100%;
+    max-width: 85%;
     transform: translateX(100%);
-    transition: all 1s ease;
+
+    transition: 
+        transform 0.6s ease-in-out,
+        filter 0.6s ease-in-out;
+
     overflow-y: auto;
+
+    scrollbar-gutter: stable;
     &.show{
-    width: 90%;
     transform: translateX(0);
     filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.334));
     }
     &.hide{
-        width: 0%;
         transform: translateX(100%);
     }
     #cartHeader{
@@ -47,6 +52,9 @@
             #cartCloseSpan2{
                 transform: translate(-50%, -50%) rotate(-45deg);
             }
+            &:hover span{
+                background-color: $hover;
+            }
         }
     }
     #cartPriceSummary{
@@ -54,13 +62,17 @@
     }
     
     #cartBttn{
-        position: absolute;
         width: 100%;
+        position: absolute;
         @include flex($justify:center);
         a {
             text-decoration: none;
             @include bttnDesignPrimary;
             padding: $p20;
+            opacity: 1;
+            &:hover{
+                background-color: $hover;
+            }
         }
     }
 }

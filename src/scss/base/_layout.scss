@@ -88,6 +88,9 @@ a{
       @include flex($align: center);
       font-family: $p-fontFamily;
       gap: 5px;
+      .cartQuantity{
+        color: $primary-color;
+      }
       button{
         background: none;
         border: none;
@@ -96,6 +99,10 @@ a{
           display: block;
           width: 20px;
           height: 20px;
+          fill: $primary-color;
+          &:hover {
+            fill: $hover !important;
+          }
         }
       }
     }
@@ -118,9 +125,7 @@ a{
     display: none !important;
   }
   #cartContainer{
-    &.show{
-        width: 40% !important;
-    }
+        max-width: 40% !important;
   }
 }
 
