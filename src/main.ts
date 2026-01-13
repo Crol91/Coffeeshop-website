@@ -2,6 +2,7 @@
 import "./scss/main.scss";
 
 import { initHamburgerNav } from "./hamburgerNav";
+import { initFooterAccordion } from "./footerAccordion";
 import { cart } from "./cart/cart";
 import { checkout } from "./utils/checkout";
 import { attachCartLogic } from "./logic/cartLogic";
@@ -12,7 +13,7 @@ import { cartHtml } from "./utils/createHtml";
 document.addEventListener("DOMContentLoaded", () => {
 
     initHamburgerNav();
-
+    initFooterAccordion();
     cartHtml(cartItems);
 
     attachCartLogic(cartItems);
