@@ -29,7 +29,7 @@ function createProductCard(coffee: Coffee): HTMLElement {
             </div>
             <button class="add-to-cart">Lägg i varukorgen
             <span class="addToCartIcon">
-  <img src="../assets/icons/icon-cart.svg" alt="a cart icon" />
+  <img src="/src/assets/icons/icon-cart.svg" alt="a cart icon" />
 </span>
             </button>
     </div>`;
