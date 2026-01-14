@@ -59,42 +59,42 @@
                         <legend>Personlig information</legend>
 
                         <label for="firstName">Förnamn</label>
-                        <input type="text" id="firstName" name="firstName" placeholder="Förnamn" required>
+                        <input type="text" id="firstName" name="firstName" placeholder="Förnamn" required autocomplete="given-name">
 
-                        <label for="lasttName">Efternamn</label>
-                        <input type="text" id="lastName" name="lastName" placeholder="Efternamn" required>
+                        <label for="lastName">Efternamn</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Efternamn" required autocomplete="family-name">
 
                         <label for="email">E-post</label>
-                        <input type="email" id="email" name="email" placeholder="E-post" required>
+                        <input type="email" id="email" name="email" placeholder="E-post" required autocomplete="email">
 
                         <label for="phone">Mobilnummer</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Mobilnummer" inputmode="numeric" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Mobilnummer" inputmode="numeric" required autocomplete="tel">
                     </fieldset>
 
                     <fieldset>
                         <legend>Adress</legend>
 
                         <label for="street">Gata</label>
-                        <input type="text" id="street" name="street" placeholder="Gata" required>
+                        <input type="text" id="street" name="street" placeholder="Gata" required autocomplete="street-address">
 
                         <label for="city">Stad</label>
-                        <input type="text" id="city" name="city" placeholder="Stad" required>
+                        <input type="text" id="city" name="city" placeholder="Stad" required autocomplete="address-level2">
 
                         <label for="zip">Postnummer</label>
-                        <input type="text" id="zip" name="zip" placeholder="Postnummer" inputmode="numeric" required>
+                        <input type="text" id="zip" name="zip" placeholder="Postnummer" inputmode="numeric" required autocomplete="postal-code">
                     </fieldset>
 
                     <fieldset>
                         <legend>Betalning</legend>
 
                         <label for="cardNumber">Kortnummer</label>
-                        <input type="text" id="cardNumber" name="cardNumber" pattern="\d{16}" maxlength="16" placeholder="XXXX XXXX XXXX XXXX" inputmode="numeric" required>
+                        <input type="text" id="cardNumber" name="cardNumber" pattern="\d{16}" maxlength="16" placeholder="XXXX XXXX XXXX XXXX" inputmode="numeric" required autocomplete="cc-number">
 
                         <label for="expiry">Giltihetstid</label>
-                        <input type="month" id="expiry" name="expiry" required>
+                        <input type="month" id="expiry" name="expiry" required autocomplete="cc-exp">
 
                         <label for="cvv">CVV</label>
-                        <input type="text" id="cvv" name="cvv" pattern="\d{3}" maxlength="3" placeholder="XXX" inputmode="numeric" required>
+                        <input type="text" id="cvv" name="cvv" pattern="\d{3}" maxlength="3" placeholder="XXX" inputmode="numeric" required autocomplete="cc-csc">
                     </fieldset>
 
                     <button type="submit" id="submitOrder">Slutför köp</button>

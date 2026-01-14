@@ -1,10 +1,10 @@
-import type { CartItem } from "../types/CartItem";
+import type { CartItem } from "./CartItem";
+import { saveCart } from "./cartStorage";
 
 // Attaches the interactive cart logic (plus/minus buttons, updating total) to the cart items
-export const attachCartLogic = (cartItems: CartItem[]) => {
-    // Initally calculate and display the total price
-    updateTotal(cartItems);
-
+export const attachCartLogic = (cartItems: CartItem[], totalElId = "totalText") => {
+    // Initally calculate the total price
+    updateTotal(cartItems, totalElId);
 // Loop through each cart item
 cartItems.forEach(item => {
     // Find the corresponding cart item element in the DOM by its data-id
@@ -27,36 +27,34 @@ cartItems.forEach(item => {
 
                     // Remove the item from the cartItems array
                     const index = cartItems.findIndex(i => i.id === item.id);
-                    if(index !== -1) {
-                        cartItems.splice(index, 1);
-                    }
-                    updateTotal(cartItems); // Recalculate total after removal
-                    return; // Exit early
+                    if(index !== -1) cartItems.splice(index, 1);
+                } else {
+                    // Update the quantity displayed in the DOM
+                    quantity.textContent = item.quantity.toString();
                 }
 
-                // Update the quantity displayed in the DOM
-                quantity.textContent = item.quantity.toString();
-
                 // Recalculate the total price
-                updateTotal(cartItems);
-        });
-
+                updateTotal(cartItems, totalElId);
+                saveCart(cartItems); // Save in localstorage
+    });
+    
         // --- PLUS BUTTON LOGIC ---
         plus.addEventListener("click", () => {
                 item.quantity++; // Increase the quantity of this item
                 quantity.textContent = item.quantity.toString(); // Update DOM
-                updateTotal(cartItems); // Recalculate total price
+                updateTotal(cartItems, totalElId); // Recalculate total price
+                saveCart(cartItems); // Save in localstorage
         });
     });
 }
 
 // Updates the total price in the cart
-const updateTotal = (cartItems: CartItem[]) => {
+const updateTotal = (cartItems: CartItem[], totalElId = "totalText") => {
     // Calculate total: sum of (price * quantity) for each item
     const total = cartItems.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
     // Find the DOM element that displays the total
-    const totalText = document.getElementById("totalText");
+    const totalText = document.getElementById(totalElId);
 
     // Update the total text if the element exists
     if (totalText) totalText.textContent = `Totalt: ${total} kr`;

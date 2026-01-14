@@ -1,4 +1,4 @@
-import type { CartItem } from "../types/CartItem";
+import type { CartItem } from "./CartItem";
 import darkRoast from "../assets/coffeeImages/darkRoast.jpeg";
 import vanilla  from "../assets/coffeeImages/vanilla.jpeg";
 

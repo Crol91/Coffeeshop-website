@@ -1,7 +1,22 @@
-import { confirmationHtml } from "./createHtml";
+import { cartItemHtml } from "../cart/cartHtml";
+import { attachCartLogic } from "../cart/cartLogic";
+import { loadCart } from "../cart/cartStorage";
+import { confirmationHtml } from "./checkoutHtml";
 
 // Handles the checkout form submission
 export const checkout = () => {
+    const cartItems = loadCart();
+
+    // Render cart
+    const checkoutCartContainer = document.getElementById("cartProductsContainer");
+    if(checkoutCartContainer){
+        cartItems.forEach(item => {
+            const itemEl = cartItemHtml(item);
+            checkoutCartContainer.appendChild(itemEl);
+        });
+        attachCartLogic(cartItems);
+    }
+
     // Get a reference to the checkout form
     const checkoutForm = document.getElementById("checkoutForm") as HTMLFormElement;
 
