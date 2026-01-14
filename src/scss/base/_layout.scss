@@ -132,8 +132,6 @@ li {
     display: none !important;
   }
   #cartContainer{
-    &.show{
-        width: 40% !important;
-    }
+    max-width: 40% !important;
   }
 }
