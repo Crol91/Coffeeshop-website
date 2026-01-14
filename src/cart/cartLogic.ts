@@ -1,5 +1,4 @@
 import type { CartItem } from "./CartItem";
-import { cartItems } from "./cartState";
 import { saveCart } from "./cartStorage";
 
 // Attaches the interactive cart logic (plus/minus buttons, updating total) to the cart items
