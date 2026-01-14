@@ -12,27 +12,39 @@
     <title>Produkter</title>
   </head>
   <body>
-    <!-- navbar -->
     <header class="site-header">
       <!-- Hamburger: alltid synlig -->
       <button class="burger" aria-label="Öppna meny" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <a href="index.html" class="site-logo">Coffeeshop</a>
+
+      <a href="index.html" class="site-logo" id="feature-h1HomeLink">
+        Coffeeshop
+      </a>
+
       <!-- Snabblänkar (IKON + text på desktop, bara ikon på mobil/tablet) -->
       <div class="navActions">
         <a class="navAction" href="#favourites" aria-label="Favoriter">
-          <span class="navAction__icon">❤</span>
+          <span class="navAction__icon">
+            <img src="/src/assets/icons/icon-heart.svg" alt="a heart icon" />
+          </span>
           <span class="navAction__text">Favoriter</span>
         </a>
 
         <a class="navAction" href="#login" aria-label="Logga in">
-          <span class="navAction__icon">👤</span>
+          <span class="navAction__icon">
+            <img
+              src="/src/assets/icons/icon-user.svg"
+              alt="a user profile icon"
+            />
+          </span>
           <span class="navAction__text">Logga in</span>
         </a>
 
         <a class="navAction" href="#cart" id="cartLink" aria-label="Varukorg">
-          <span class="navAction__icon">🛒</span>
+          <span class="navAction__icon">
+            <img src="/src/assets/icons/icon-cart.svg" alt="a cart icon"
+          /></span>
           <span class="navAction__text">Varukorg</span>
         </a>
       </div>
@@ -42,7 +54,7 @@
       <nav class="navBar" aria-hidden="true">
         <div class="navItems">
           <ul>
-            <li><a href="#products">Produkter</a></li>
+            <li><a href="productPage.html">Produkter</a></li>
             <li><a href="#about">Om oss</a></li>
             <li><a href="#contact">Kontakt</a></li>
           </ul>
@@ -77,37 +89,37 @@
     </section>
     
     <!-- footer columns -->
-    <footer>
-      <div class="footerColumn">
-        <h5>Hjälp</h5>
+    <footer class="site-footer">
+      <details class="footerColumn">
+        <summary>Hjälp</summary>
         <ul>
           <li>Hjälpcenter</li>
           <li>Villkor</li>
           <li>Leverans</li>
         </ul>
-      </div>
+      </details>
 
-      <div class="footerColumn">
-        <h5>Om Coffeeshop</h5>
+      <details class="footerColumn">
+        <summary>Om Coffeeshop</summary>
         <ul>
           <li>Om oss</li>
           <li>Cookies</li>
           <li>Hållbarhet</li>
         </ul>
-      </div>
+      </details>
 
-      <div class="footerColumn">
-        <h5>Kontakt</h5>
+      <details class="footerColumn">
+        <summary>Kontakt</summary>
         <ul>
           <li>Telefonnummer: 08-1234 56</li>
           <li>E-post: kundservice@coffeeshop.se</li>
           <li>Adress: Gustav III:s Boulevard 169 96 Solna</li>
         </ul>
-      </div>
+      </details>
 
-      <div class="footerColumn">
+      <div class="footerColumn footerColumn--payment">
         <h5>Betalmetod:</h5>
-        <ul>
+        <ul class="iconRow">
           <li><i class="fa-brands fa-cc-visa"></i></li>
           <li><i class="fa-brands fa-cc-mastercard"></i></li>
           <li><i class="fa-brands fa-apple-pay"></i></li>
@@ -115,9 +127,9 @@
         </ul>
       </div>
 
-      <div class="footerColumn">
+      <div class="footerColumn footerColumn--social">
         <h5>Följ oss:</h5>
-        <ul>
+        <ul class="iconRow">
           <li><i class="fa-brands fa-instagram"></i></li>
           <li><i class="fa-brands fa-linkedin"></i></li>
           <li><i class="fa-brands fa-facebook"></i></li>
@@ -125,6 +137,9 @@
         </ul>
       </div>
     </footer>
+
+    <!-- Cart -->
+    <div id="cartContainer"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
