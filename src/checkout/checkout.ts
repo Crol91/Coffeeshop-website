@@ -30,12 +30,16 @@ export const checkout = () => {
         
         // Create and display the order confirmation HTML element
         const orderConfirmation = confirmationHtml(firstName, email, cartItems);
-        
-        // Allow the user to click on the confirmation message to remove it from the DOM
-        orderConfirmation.addEventListener("click", () => {
-            orderConfirmation.remove();
-        });
-        
+        // Click on the confirmation to remove it
+        orderConfirmation.addEventListener("click", () => orderConfirmation.remove());
+
+        // Empties cart in localstorage
+        localStorage.removeItem("cart");
+        // Empties cart in UI
+        const checkoutCartContainer = document.getElementById("cartProductsContainer");
+        if (checkoutCartContainer) checkoutCartContainer.innerHTML = "";
+        const totalText = document.getElementById("totalText");
+        if (totalText) totalText.textContent = "0 kr";
         // Reset the form fields after submission
         checkoutForm.reset();
     });
