@@ -29,7 +29,7 @@ export const checkout = () => {
         const email = (document.getElementById("email") as HTMLInputElement).value;
         
         // Create and display the order confirmation HTML element
-        const orderConfirmation = confirmationHtml(firstName, email);
+        const orderConfirmation = confirmationHtml(firstName, email, cartItems);
         
         // Allow the user to click on the confirmation message to remove it from the DOM
         orderConfirmation.addEventListener("click", () => {

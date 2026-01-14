@@ -76,6 +76,12 @@ a{
   font-weight: $weight-400;
   color: black;
 }
+li {
+  font-size: $p-fontSize;
+  font-family: $p-fontFamily;
+  font-weight: $weight-400;
+  color: $primary-color;
+}
 
 /* Cart items styling */
 .cartItem {

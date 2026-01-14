@@ -12,17 +12,14 @@ body {
     text-align: left;
     margin-bottom: $p20;
     @include flex($direction:column, $align:center);
-    h2{
-        font-weight: $weight-600;
-    }
-    h3{
-        font-weight:$weight-600;
-    }
     a{
         text-decoration: none;
         @include flex($justify:center, $align:center);
         gap: 0.5em;
     }
+    .cartItem{
+    border: 1px solid lightgray;
+}
 }
 nav{
     background-color: white;
@@ -48,6 +45,7 @@ nav{
         }
     }
 }
+
 fieldset{
     @include flex($direction: column);
     border-radius: 10px;
