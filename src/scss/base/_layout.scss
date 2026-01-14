@@ -15,9 +15,9 @@ p {
   transform: translateX(-50%);
   margin: 0;
   color: $primary-color;
-  font-family: $h1-fontFamily;
+  font-family: $brand-fontFamily;
   text-decoration: none;
-  font-size: 2.2rem; // 🔥 
+  font-size: 2.2rem; 
   &:hover {
   opacity: 0.85;
 }
@@ -25,35 +25,35 @@ p {
 
 h1 {
   font-size: $h1-fontSize;
-  font-family: $h1-fontFamily;
+  font-family: $h1-h5-fontFamily;
   font-weight: $weight-400;
   color: $primary-color;
 }
 
 h2 {
   font-size: $h2-fontSize;
-  font-family: $h2-h5-fontFamily;
+  font-family: $h1-h5-fontFamily;
   font-weight: $weight-400;
   color: $primary-color;
 }
 
 h3 {
   font-size: $h3-fontSize;
-  font-family: $h2-h5-fontFamily;
+  font-family: $h1-h5-fontFamily;
   font-weight: $weight-400;
   color: $primary-color;
 }
 
 h4 {
   font-size: $h4-fontSize;
-  font-family: $h2-h5-fontFamily;
+  font-family: $h1-h5-fontFamily;
   font-weight: $weight-400;
   color: $primary-color;
 }
 
 h5 {
   font-size: $h5-fontSize;
-  font-family: $h2-h5-fontFamily;
+  font-family: $h1-h5-fontFamily;
   font-weight: $weight-400;
   color: $primary-color;
 }
@@ -65,7 +65,7 @@ body {
 
 label {
   font-size: $h3-fontSize;
-  font-family: $h2-h5-fontFamily;
+  font-family: $h1-h5-fontFamily;
   font-weight: $weight-400;
   color: $primary-color;
 }
@@ -83,43 +83,6 @@ li {
   color: $primary-color;
 }
 
-/* Cart items styling */
-.cartItem {
-  @include flex($justify: space-between, $align: center);
-    padding: 10px;
-    border: 1px solid rgb(239, 239, 239);
-    margin: $p10;
-    border-radius: $border-radius;
-    .cartItemControls{
-      @include flex($align: center);
-      font-family: $p-fontFamily;
-      gap: 5px;
-      .cartQuantity{
-        color: $primary-color;
-      }
-      button{
-        background: none;
-        border: none;
-        cursor: pointer;
-        svg {
-          display: block;
-          width: 20px;
-          height: 20px;
-          fill: $primary-color;
-          &:hover {
-            fill: $hover !important;
-          }
-        }
-      }
-    }
-    .thumbnail {
-      width: 20%;
-      min-width: 75px;
-      border-radius: $border-radius;
-      margin:$m10;
-    }
-}
-
 /* Media queries */
 @include respond(md){
     .navAction__text {
@@ -131,9 +94,8 @@ li {
     display: none !important;
   }
   #cartContainer{
-        max-width: 40% !important;
+    &.show{
+        width: 40% !important;
+    }
   }
-}
-
-@include respond(lg){
 }
