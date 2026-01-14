@@ -9,25 +9,27 @@ import { attachCartLogic } from "./cart/cartLogic";
 import { cartItems as initialCartItems } from "./cart/cartState";
 import { cartHtml } from "./cart/cartHtml";
 import { loadCart } from "./cart/cartStorage";
-
+import { renderProducts } from "./utils/createProductHtml";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const cartItems = loadCart();
-    if(cartItems.length === 0){
+  const cartItems = loadCart();
+  if (cartItems.length === 0) {
     // If nothing is stored in localstorage, start with default items
     cartItems.push(...initialCartItems);
-    }
-    initHamburgerNav();
-    initFooterAccordion();
-    cartHtml(cartItems);
+  }
+  initHamburgerNav();
+  initFooterAccordion();
+  cartHtml(cartItems);
 
-    attachCartLogic(cartItems);
+  attachCartLogic(cartItems);
 
-    cart();
+  cart();
 
-    const checkoutForm = document.getElementById("checkoutForm");
-    if(checkoutForm) {
-        checkout();
-    }
+  const checkoutForm = document.getElementById("checkoutForm");
+  if (checkoutForm) {
+    checkout();
+  }
 });
 
+// Runs "create product card" function
+renderProducts();

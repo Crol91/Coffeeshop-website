@@ -1,9 +1,10 @@
 import { Coffee } from "../models/Coffee";
 import { coffeeList } from "../data/coffees";
 
-const productContainer = document.getElementById("productContainer");
+export function renderProducts(): void {
+  const productContainer = document.getElementById("productContainer");
 
-if (productContainer) {
+  if (!productContainer) return;
   productContainer.innerHTML = "";
 
   coffeeList.forEach((coffee) => {
