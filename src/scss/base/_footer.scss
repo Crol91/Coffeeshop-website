@@ -2,7 +2,7 @@
 @use "./mixins" as *;
 
 @mixin footer-title {
-  font-family: $h2-h5-fontFamily;
+  font-family: $h1-h5-fontFamily;
   font-size: $h5-fontSize;
   font-weight: $weight-600;
   color: $primary-color;

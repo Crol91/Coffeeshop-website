@@ -41,10 +41,12 @@
   &__welcome {
     margin: 0 0 $m10;
     font-weight: $weight-600;
+    font-family: $h1-h5-fontFamily;
   }
 
   &__title {
     @include sizeTitle;
+    font-family: $brand-fontFamily;
   }
 
   &__subtitle {
