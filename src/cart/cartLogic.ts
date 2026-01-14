@@ -31,6 +31,10 @@ cartItems.forEach(item => {
                 } else {
                     // Update the quantity displayed in the DOM
                     quantity.textContent = item.quantity.toString();
+
+                    // Update price text
+                    const priceEl = itemEl.querySelector(".cartItemPrice") as HTMLParagraphElement;
+                    if(priceEl) priceEl.textContent = `${item.price * item.quantity} kr`;
                 }
 
                 // Recalculate the total price
@@ -42,6 +46,11 @@ cartItems.forEach(item => {
         plus.addEventListener("click", () => {
                 item.quantity++; // Increase the quantity of this item
                 quantity.textContent = item.quantity.toString(); // Update DOM
+                
+                // Update price text
+                const priceEl = itemEl.querySelector(".cartItemPrice") as HTMLParagraphElement;
+                if(priceEl) priceEl.textContent = `${item.price * item.quantity} kr`;
+                
                 updateTotal(cartItems, totalElId); // Recalculate total price
                 saveCart(cartItems); // Save in localstorage
         });
