@@ -60,7 +60,7 @@
     cursor: pointer;
     border: 0;
 
-    width: 100%;
+    width: auto;
     max-width: 18rem;
     padding: 0.95rem 1.5rem;
     &:hover {
@@ -69,6 +69,7 @@
     }
   }
 }
+
 
 /* Tablet och uppåt */
 @include respond(md) {
