@@ -3,26 +3,31 @@ export function initFooterAccordion() {
     document.querySelectorAll<HTMLDetailsElement>(".site-footer .footerColumn")
   );
 
-  if (!items.length) return;
+  if (items.length === 0) {
+  return;
+}
 
-  const mqDesktop = window.matchMedia("(min-width: 1024px)");
+  const mqDesktop = window.matchMedia("(min-width: 800px)");
 
   const apply = () => {
-    if (mqDesktop.matches) {
+    if (mqDesktop.matches === true) {
       // Desktop: allt öppet
-      items.forEach((d) => (d.open = true));
+      items.forEach((d) => {
+      d.open = true;
+      });
       return;
     }
-
-    // Mobil/tablet: stäng allt...
-    items.forEach((d) => (d.open = false));
-
-    // ...men öppna de som ska vara synliga från början
-    items
-      .filter((d) => d.hasAttribute("data-footer-default-open"))
-      .forEach((d) => (d.open = true));
+  
+    // Mobil/tablet: stäng allt
+    items.forEach((d) => {
+    d.open = false;
+    });
   };
 
+ // Gör sidan respnonsiv direkt vid laddning
+apply();
+
+mqDesktop.addEventListener("change", () => {
   apply();
-  mqDesktop.addEventListener("change", apply);
+});
 }

@@ -15,14 +15,6 @@
   display: flex;
   flex-direction: column;
 }
-/*
-.footerTitle {
-  font-family: $h2-h5-fontFamily;
-  font-size: $h5-fontSize;
-  font-weight: $weight-600;
-  color: $primary-color;
-}
-*/
 
 /* Accordion (mobil/tablet) */
 .footerColumn {
@@ -153,14 +145,11 @@
   .footerColumn--payment,
   .footerColumn--social {
     display: block;
-  }
-
- 
+    }
 
   .iconRow {
     justify-content: flex-start;
     gap: 14px;
-
     i {
       font-size: 1.8rem; /* större på desktop */
     }
