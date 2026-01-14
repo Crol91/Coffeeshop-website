@@ -16,6 +16,11 @@ export const cartItemHtml = (item:CartItem): HTMLDivElement => {
     const name = document.createElement("p");
     name.textContent = item.name;
 
+    // Product price
+    const price = document.createElement("p");
+    price.className = "cartItemPrice";
+    price.textContent = `${item.price * item.quantity}kr`;
+    
     // Controls container for quantity: minus button, quantity display and plus button
     const controls = document.createElement("div");
     controls.className = "cartItemControls";
@@ -45,7 +50,7 @@ export const cartItemHtml = (item:CartItem): HTMLDivElement => {
     // Append controls to the control container
     controls.append(minus, quantity, plus);
     // Append image, name and control container to the cart item element
-    itemEl.append(img, name, controls);
+    itemEl.append(img, name, price, controls);
 
     return itemEl;
 }
@@ -69,6 +74,7 @@ export const cartHtml = (cartItems: CartItem[]) => {
     // Create Cart title, "Total" text, and link to the checkout page
     const cartTitle = document.createElement("h2");
     const totalText = document.createElement("h3");
+    const momsText = document.createElement("p");
     const checkoutLink = document.createElement("a");
 
     // Assign IDs for styling and later DOM reference
@@ -80,12 +86,14 @@ export const cartHtml = (cartItems: CartItem[]) => {
     totalContainer.id = "totalHeader";
     cartTitle.id = "cartTitle";
     totalText.id = "totalText";
+    momsText.id = "momsText";
     cartBttn.id = "cartBttn";
     checkoutLink.id = "ceckoutLink";
 
     // Set text for cart heading, total text, checkout link and href for checkout link
     cartTitle.textContent = "Varukorg";
     totalText.textContent = "Totalt";
+    momsText.textContent = "(inkl. moms)";
     checkoutLink.href = "checkout";
     checkoutLink.textContent = "Till kassan";
 
@@ -100,7 +108,7 @@ export const cartHtml = (cartItems: CartItem[]) => {
         });
     
     // Append total and checkout button
-    totalContainer.appendChild(totalText);
+    totalContainer.append(totalText, momsText);
     cartPriceSummary.appendChild(totalContainer);
     cartBttn.appendChild(checkoutLink);
     cartContainer.append(cartHeader, cartPriceSummary, cartBttn);

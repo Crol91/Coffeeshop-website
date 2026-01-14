@@ -60,7 +60,16 @@
     #cartPriceSummary{
         padding: $p20;
     }
-    
+    #totalHeader{
+        margin: $m10;
+        #totalText{
+            margin: 0;
+        }
+        #momsText{
+            margin: 0;
+            font-size: 0.7rem;
+            }
+    }
     #cartBttn{
         width: 100%;
         position: absolute;
