@@ -1,4 +1,5 @@
 import type { CartItem } from "./CartItem";
+import { cartItems } from "./cartState";
 import { saveCart } from "./cartStorage";
 
 // Attaches the interactive cart logic (plus/minus buttons, updating total) to the cart items
@@ -37,7 +38,7 @@ cartItems.forEach(item => {
                 updateTotal(cartItems, totalElId);
                 saveCart(cartItems); // Save in localstorage
     });
-    
+
         // --- PLUS BUTTON LOGIC ---
         plus.addEventListener("click", () => {
                 item.quantity++; // Increase the quantity of this item
@@ -49,7 +50,7 @@ cartItems.forEach(item => {
 }
 
 // Updates the total price in the cart
-const updateTotal = (cartItems: CartItem[], totalElId = "totalText") => {
+export const updateTotal = (cartItems: CartItem[], totalElId = "totalText") => {
     // Calculate total: sum of (price * quantity) for each item
     const total = cartItems.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
@@ -58,4 +59,8 @@ const updateTotal = (cartItems: CartItem[], totalElId = "totalText") => {
 
     // Update the total text if the element exists
     if (totalText) totalText.textContent = `Totalt: ${total} kr`;
+};
+
+export const calculateTotal = (cartItems: CartItem[]): number => {
+    return cartItems.reduce((sum, i) => sum + i.price * i.quantity, 0);
 };
