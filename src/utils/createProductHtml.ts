@@ -18,17 +18,19 @@ export function renderProducts(): void {
 function createProductCard(coffee: Coffee): HTMLElement {
   const card = document.createElement("div");
   card.className = "product-card";
-  card.innerHTML = `<img src="${coffee.image}" alt="${
-    coffee.name
-  }" class="product-image"/>
+  card.innerHTML = `
+  <img src="${coffee.image}" alt="${coffee.name}" class="product-image"/>
     <div class="product-info">
-        <h3>${coffee.name}</h3>
-        <p><strong>${coffee.price} :-</strong></p>
+        <span class="product-name"><strong>${
+          coffee.name
+        } </strong></span><span class="product-price">${coffee.price}:-</span>
         <div class="stock-status ${
           coffee.inStock ? "in-stock" : "out-of-stock"
         }">
         <span class="stockCircle"></span>
-        <span>${coffee.inStock ? "Finns i lager" : "Finns ej i lager"}</span>
+        <span class="inStockText">${
+          coffee.inStock ? "Finns i lager" : "Finns ej i lager"
+        }</span>
             </div>
             <button class="add-to-cart">Lägg i varukorgen
             <span class="addToCartIcon">
