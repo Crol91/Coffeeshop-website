@@ -34,9 +34,7 @@
   }
 
   &__title {
-    font-size:$h1-fontSize;
-    font-family:$h1-h5-fontFamily;
-    font-weight: $weight-600;
+    @include heading-h1;
   }
 }
 

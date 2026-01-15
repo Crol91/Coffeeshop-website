@@ -39,3 +39,10 @@
         @content;
     }
 }
+
+@mixin heading-h1 {
+  font-size: $h1-fontSize;
+  font-family: $h1-h5-fontFamily;
+  font-weight: $weight-600;
+  color: $primary-color;
+}

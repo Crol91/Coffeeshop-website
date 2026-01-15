@@ -40,8 +40,7 @@
      här sätter vi bara spacing + ev vikt/effekt */
   &__welcome {
     margin: 0 0 $m20;
-    font-weight: $weight-600;
-    font-family: $h1-h5-fontFamily;
+    @include heading-h1;
   }
 
   &__title {
