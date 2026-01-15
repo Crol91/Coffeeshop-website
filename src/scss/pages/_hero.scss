@@ -17,7 +17,7 @@
   align-items: flex-start;
 
   /* plats för fixed header + luft */
-  padding: 1.5rem $p15 1.5rem;
+  padding: 4.5rem $p15 1.5rem;
 
   /* Overlay för läsbarhet */
   &::before {
@@ -39,7 +39,7 @@
   /* Typografi kommer från global layout (h3/h1/p),
      här sätter vi bara spacing + ev vikt/effekt */
   &__welcome {
-    margin: -20rem 0 $m20;
+    margin: 0 0 $m20;
     font-weight: $weight-600;
     font-family: $h1-h5-fontFamily;
   }
