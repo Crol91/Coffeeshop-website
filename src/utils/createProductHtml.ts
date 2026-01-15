@@ -39,22 +39,22 @@ function createProductCard(coffee: Coffee): HTMLElement {
             </button>
     </div>`;
 
-    const button = card.querySelector(".add-to-cart") as HTMLButtonElement;
-  
-    button.addEventListener("click", () => {
-      if(!coffee.inStock) {
-        alert("Produkten finns ej i lager");
-        return;
+  const button = card.querySelector(".add-to-cart") as HTMLButtonElement;
+
+  button.addEventListener("click", () => {
+    if (!coffee.inStock) {
+      alert("Produkten finns ej i lager");
+      return;
     }
-      const cartItem = {
-        id: coffee.name,
-        name: coffee.name,
-        price: coffee.price,
-        quantity: 1,
-        thumbnail: coffee.image,
-      };
-      addToCart(cartItem);
-      renderCartFromStorage();
-    });
+    const cartItem = {
+      id: coffee.name,
+      name: coffee.name,
+      price: coffee.price,
+      quantity: 1,
+      thumbnail: coffee.image,
+    };
+    addToCart(cartItem);
+    renderCartFromStorage();
+  });
   return card;
 }
