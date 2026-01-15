@@ -1,5 +1,7 @@
 import { Coffee } from "../models/Coffee";
 import { coffeeList } from "../data/coffees";
+import { addToCart } from "../cart/cartStorage";
+import { renderCartFromStorage } from "../cart/cartRender";
 
 export function renderProducts(): void {
   const productContainer = document.getElementById("productContainer");
@@ -34,5 +36,19 @@ function createProductCard(coffee: Coffee): HTMLElement {
 </span>
             </button>
     </div>`;
+
+    const button = card.querySelector(".add-to-cart") as HTMLButtonElement;
+
+    button.addEventListener("click", () => {
+      const cartItem = {
+        id: coffee.name,
+        name: coffee.name,
+        price: coffee.price,
+        quantity: 1,
+        thumbnail: coffee.image,
+      };
+      addToCart(cartItem);
+      renderCartFromStorage();
+    });
   return card;
 }

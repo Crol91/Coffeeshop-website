@@ -60,6 +60,7 @@ export const cartHtml = (cartItems: CartItem[]) => {
     const cartContainer = document.getElementById("cartContainer") as HTMLDivElement;
     if (!cartContainer) return; // Exit if container is missing
 
+    cartContainer.innerHTML = "";
     // Create sections for header, price summary and checkout button
     const cartHeader = document.createElement("section");
     const cartPriceSummary = document.createElement("section");
