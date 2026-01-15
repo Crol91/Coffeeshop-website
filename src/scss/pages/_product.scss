@@ -21,9 +21,6 @@
   }
 
   &__title {
-<<<<<<< HEAD
-    @include heading-h1;
-=======
     @include sizeTitle;
     @include heading-h1;
   }
@@ -36,7 +33,6 @@
 
   &__content {
     width: 100%;
->>>>>>> feature-createProductScss
   }
 }
 
