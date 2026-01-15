@@ -17,16 +17,11 @@ p {
   color: $primary-color;
   font-family: $brand-fontFamily;
   text-decoration: none;
-<<<<<<< HEAD
-  font-size: 2.2rem; 
-=======
   font-size: 2.2rem; // 🔥
->>>>>>> feature-createProductScss
   &:hover {
     opacity: 0.85;
   }
 }
-
 h1 {
   font-size: $h1-fontSize;
   font-family: $h1-h5-fontFamily;
@@ -135,12 +130,6 @@ li {
   .nav-overlay {
     display: none !important;
   }
-<<<<<<< HEAD
-  #cartContainer{
-    max-width: 40% !important;
-  }
-}
-=======
   #cartContainer {
     max-width: 40% !important;
   }
@@ -151,4 +140,3 @@ li {
 
 @include respond(lg) {
 }
->>>>>>> feature-createProductScss

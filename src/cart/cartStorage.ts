@@ -17,3 +17,16 @@ export const loadCart = (): CartItem[] => {
 export const clearCart = () => {
     localStorage.removeItem(CART_KEY);
 };
+
+export const addToCart = (newItem: CartItem) => {
+    const cart = loadCart();
+
+    const existingItem = cart.find(item => item.id === newItem.id);
+
+    if(existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push(newItem);
+    }
+    saveCart(cart);
+};
