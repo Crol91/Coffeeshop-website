@@ -3,46 +3,45 @@
 
 .productPageContent {
   min-height: 100svh;
+  position: relative;
+  padding: 6.5rem 0 4.5rem;
 
   background-image: url("/src/assets/productpage.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  padding: 6.5rem 0 4.5rem;
 
-  /* plats för fixed header + luft */
-  padding: 6.5rem $p15 4.5rem;
-
-  /* Overlay för läsbarhet */
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.35);
-  }
-
-  &__content {
-    position: relative;
-    z-index: 1;
-
-    width: 100%;
-    margin: 3rem;
+    background: rgba(255, 255, 255, 0.1);
   }
 
   &__title {
     @include sizeTitle;
+    @include heading-h1;
+  }
+
+  .productWrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  &__content {
+    width: 100%;
   }
 }
 
 #productContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  padding: 20px;
+  justify-content: center;
+  padding: 0;
 
   .product-card {
     background-color: #f8f4e9;
@@ -51,30 +50,65 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    max-width: 300px;
 
     img.product-image {
       width: 100%;
-      max-width: 200px;
-      border-radius: 10px;
-      margin-bottom: 10px;
+      max-width: 300px;
     }
-    .product-info {
-      h3 {
-        margin-bottom: 5px;
-      }
 
+    .product-info {
       p {
         margin-bottom: 10px;
       }
+
+      .product-name {
+        font-family: $p-fontFamily;
+        color: $primary-color;
+      }
+
+      .product-price {
+        font-family: $p-fontFamily;
+        color: black;
+      }
+
+      .stock-status {
+        display: flex;
+        gap: 8px;
+
+        &.in-stock {
+          .stockCircle {
+            background-color: green;
+          }
+        }
+
+        &.out-of-stock {
+          .stockCircle {
+            background-color: red;
+          }
+        }
+
+        .inStockText {
+          font-family: $p-fontFamily;
+        }
+
+        .stockCircle {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+        }
+      }
     }
+
     .add-to-cart {
+      font-family: $p-fontFamily;
+      color: black;
       background-color: #ffda8f;
       border: none;
       border-radius: 25px;
+      max-width: 200px;
       padding: 10px 20px;
       cursor: pointer;
-
       display: flex;
       align-items: center;
       gap: 8px;
