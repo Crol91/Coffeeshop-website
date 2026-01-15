@@ -17,11 +17,7 @@ p {
   color: $primary-color;
   font-family: $brand-fontFamily;
   text-decoration: none;
-<<<<<<< HEAD
-  font-size: 2.2rem; 
-=======
-  font-size: 2.2rem; // 🔥
->>>>>>> feature-createProductScss
+  font-size: 2.2rem;
   &:hover {
     opacity: 0.85;
   }
@@ -87,7 +83,6 @@ li {
   color: $primary-color;
 }
 
-
 /* Cart items styling */
 .cartItem {
   @include flex($justify: space-between, $align: center);
@@ -135,12 +130,9 @@ li {
   .nav-overlay {
     display: none !important;
   }
-<<<<<<< HEAD
-  #cartContainer{
+  #cartContainer {
     max-width: 40% !important;
   }
-}
-=======
   #cartContainer {
     max-width: 40% !important;
   }
@@ -151,4 +143,3 @@ li {
 
 @include respond(lg) {
 }
->>>>>>> feature-createProductScss
