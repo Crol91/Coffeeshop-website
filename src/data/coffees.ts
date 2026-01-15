@@ -14,7 +14,7 @@ export const coffeeList: Coffee[] = [
     true
   ),
   new Coffee("/src/assets/coffeeImages/chocolate.jpeg", "Chocolate", 149, true),
-  new Coffee("/src/assets/coffeeImages/vanilla.jpeg", "Vanila", 149, true),
+  new Coffee("/src/assets/coffeeImages/vanilla.jpeg", "Vanilla", 149, true),
   new Coffee("/src/assets/coffeeImages/cinnamon.jpeg", "Cinnamon", 129, false),
   new Coffee(
     "/src/assets/coffeeImages/darkRoast.jpeg",

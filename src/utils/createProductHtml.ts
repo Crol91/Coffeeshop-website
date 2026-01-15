@@ -35,8 +35,7 @@ function createProductCard(coffee: Coffee): HTMLElement {
             <button class="add-to-cart">Lägg i varukorgen
             <span class="addToCartIcon">
   <img src="/src/assets/icons/icon-cart.svg" alt="a cart icon" />
-</span>
-            </button>
+</span></button>
     </div>`;
 
   const button = card.querySelector(".add-to-cart") as HTMLButtonElement;
