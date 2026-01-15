@@ -38,7 +38,7 @@ function createProductCard(coffee: Coffee): HTMLElement {
     </div>`;
 
     const button = card.querySelector(".add-to-cart") as HTMLButtonElement;
-
+        
     button.addEventListener("click", () => {
       const cartItem = {
         id: coffee.name,
@@ -48,6 +48,9 @@ function createProductCard(coffee: Coffee): HTMLElement {
         thumbnail: coffee.image,
       };
       addToCart(cartItem);
+      if(coffee.inStock !== true) {
+        alert("Produkten finns ej i lager");
+      }
       renderCartFromStorage();
     });
   return card;

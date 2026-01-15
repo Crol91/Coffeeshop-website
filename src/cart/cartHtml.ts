@@ -55,7 +55,7 @@ export const cartItemHtml = (item:CartItem): HTMLDivElement => {
     return itemEl;
 }
 
-// Creates the entire shopping cart in the DOM base on an array of CartItem
+// Creates the entire shopping cart in the DOM based on an array of CartItem
 export const cartHtml = (cartItems: CartItem[]) => {
     const cartContainer = document.getElementById("cartContainer") as HTMLDivElement;
     if (!cartContainer) return; // Exit if container is missing
@@ -102,7 +102,7 @@ export const cartHtml = (cartItems: CartItem[]) => {
     cartCloseContainer.append(cartCloseSpan1, cartCloseSpan2);
     cartHeader.append(cartTitle, cartCloseContainer);
 
-    // Loop thourgh cart items and append each to the price summary
+    // Loop thourgh cart items and append each to the section cartpPriceSummary
     cartItems.forEach(item => {
             const itemEl = cartItemHtml(item);
             cartPriceSummary.appendChild(itemEl);
