@@ -25,7 +25,7 @@ p {
 h1 {
   font-size: $h1-fontSize;
   font-family: $h1-h5-fontFamily;
-  font-weight: $weight-400;
+  font-weight: $weight-600;
   color: $primary-color;
 }
 
@@ -132,7 +132,6 @@ li {
  #cartContainer {
     max-width: 40% !important;
   }
-  
   #productContainer {
     grid-template-columns: repeat(3, 1fr);
   }
