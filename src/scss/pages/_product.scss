@@ -111,20 +111,6 @@
 
     .add-to-cart {
       @include bttnDesignSecondary;
-<<<<<<< HEAD
-      border-radius: 25px;
-      cursor: pointer;
-
-      .addToCartIcon {
-        img {
-          width: 20px;
-          height: auto;
-          margin: 2px;
-        }
-      }
-      &:hover {
-        background-color: #f3dda4;
-=======
       display: flex;
       align-items: center;
       justify-content: center;
@@ -135,9 +121,6 @@
 
       .addToCartIcon {
         img {
-          display: flex;
-          align-items: center;
-          justify-content: center;
           width: 15px;
           height: auto;
           margin-left: 20px;
@@ -145,7 +128,6 @@
       }
       &:hover {
         background-color: #fce6b0c7;
->>>>>>> feature-createProductScss
       }
     }
   }
