@@ -57,13 +57,13 @@
     }
 
     .product-info {
-      p {
-        margin-bottom: 10px;
-      }
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
 
       .product-name {
         font-family: $p-fontFamily;
-        color: $primary-color;
+        color: black;
       }
 
       .product-price {
@@ -73,17 +73,18 @@
 
       .stock-status {
         display: flex;
+        align-items: center;
         gap: 8px;
 
         &.in-stock {
           .stockCircle {
-            background-color: green;
+            background-color: rgb(109, 185, 109);
           }
         }
 
         &.out-of-stock {
           .stockCircle {
-            background-color: red;
+            background-color: rgb(202, 62, 62);
           }
         }
 
@@ -100,20 +101,27 @@
     }
 
     .add-to-cart {
-      font-family: $p-fontFamily;
-      color: black;
-      background-color: #ffda8f;
-      border: none;
-      border-radius: 25px;
-      max-width: 200px;
-      padding: 10px 20px;
-      cursor: pointer;
+      @include bttnDesignSecondary;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      border-radius: 25px;
+      cursor: pointer;
+      max-width: 200px;
+      padding: 5px;
 
+      .addToCartIcon {
+        img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 15px;
+          height: auto;
+          margin-left: 20px;
+        }
+      }
       &:hover {
-        background-color: #ffcc4d;
+        background-color: #fce6b0c7;
       }
     }
   }
