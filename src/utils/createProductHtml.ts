@@ -23,9 +23,9 @@ function createProductCard(coffee: Coffee): HTMLElement {
     <div class="product-info">
         <span class="product-name"><strong>${
           coffee.name
-        } </strong></span><span class="product-price"><strong>${
-    coffee.price
-  }:-</strong></span>
+        } </strong></span><span class="product-description">${
+    coffee.description
+  }</span><span class="product-price"><strong>${coffee.price}:-</strong></span>
         <div class="stock-status ${
           coffee.inStock ? "in-stock" : "out-of-stock"
         }">
