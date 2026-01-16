@@ -8,6 +8,6 @@ export const renderCartFromStorage = () => {
 
     // Render cart in DOM
     cartHtml(cartItems);
-    // Attach interactive locig to the cart
+    // Attach interactive logic to the cart item
     attachCartLogic(cartItems);
 };
