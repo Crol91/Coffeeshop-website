@@ -102,7 +102,7 @@ export const cartHtml = (cartItems: CartItem[]) => {
     cartCloseContainer.append(cartCloseSpan1, cartCloseSpan2);
     cartHeader.append(cartTitle, cartCloseContainer);
 
-    // Loop thourgh cart items and append each to the section cartpPriceSummary
+    // Loop thourgh cart items and append each to the section cartPriceSummary
     cartItems.forEach(item => {
             const itemEl = cartItemHtml(item);
             cartPriceSummary.appendChild(itemEl);
