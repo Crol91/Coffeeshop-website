@@ -5,66 +5,73 @@
 /* Landing page – Hero (mobile-first) */
 
 .landing-hero {
-  min-height: 100svh;
+position: relative;
 
-  background-image: url("/src/assets/landningpage.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 
+&__image {
+  width: 100%;
+  height: 87svh; // styr hur inzoomad den känns
+  display: block; // tar bort default gap under img
+   
+  object-fit: cover;   // zoomar och fyller ytan
+  object-position: center;
   position: relative;
-  display: flex;
-  align-items: flex-start;
-
-  /* plats för fixed header + luft */
-  padding: 4.5rem $p15 1.5rem;
-
+  z-index: 0; 
+}
   /* Overlay för läsbarhet */
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.422);
+    background-color: rgba(255, 255, 255, 0.422);
+    z-index: 1;
   }
 
   &__content {
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    padding: 0.5rem 0rem 4rem;
 
-    width: 100%;
-    max-width: 34rem;
-    margin: 0 auto;
+    //width: 100%;
+    max-width: 34rem; // begränsar bredd på textinnehåll
+    margin: 0 auto; // centrerar innehåll horisontellt
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   /* Typografi kommer från global layout (h3/h1/p),
      här sätter vi bara spacing + ev vikt/effekt */
   &__welcome {
-    margin: 0 0 $m20;
-    @include heading-h1;
+    margin: 4rem 1rem 0.5rem;
+    font-weight: $weight-600;
+    font-family: $h1-h5-fontFamily;
   }
 
   &__title {
     @include sizeTitle;
     font-family: $brand-fontFamily;
-    margin: 0 0 $m15;
+    margin: 0 1rem 3rem;
   }
 
   &__subtitle {
-    margin: 0 0 $m20;
+    margin: 0 0 1rem 2rem;
     max-width: 40ch;
   }
 
   &__cta {
     @include bttnDesignPrimary();
-
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
     border: 0;
-
     width: auto;
-    max-width: 18rem;
+    max-width: 17rem;
     padding: 0.95rem 1.5rem;
+    margin: 3rem 2rem 0;
+
     &:hover {
       background-color: $hover;
       color: $secondary-color;
@@ -72,25 +79,13 @@
   }
 }
 
-
-/* Tablet och uppåt */
+/* Tablet och uppåt 
 @include respond(md) {
   .landing-hero {
-    align-items: center;
-    padding: 6rem $p20 4rem;
 
-    &::before {
-      background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.7) 0%,
-        rgba(255, 255, 255, 0.4) 45%,
-        rgba(0, 0, 0, 0.05) 100%
-      );
-    }
 
     &__content {
-      margin: 0;
-      max-width: 38rem;
+      width: auto;
     }
 
     &__cta {
@@ -98,10 +93,27 @@
     }
   }
 }
+*/
+
+@include respond(md) {
+  .landing-hero__image {
+    height: 97svh;
+    object-fit: cover;
+  }
+  .landing-hero__content {
+    padding: 1.75rem 1rem 4rem;
+    max-width: 80rem;
+    
+  }
+}
 
 /* Desktop och uppåt */
 @include respond(lg) {
-  .landing-hero {
-    padding-left: clamp(2rem, 6vw, 5rem);
+  .landing-hero__image {
+    height: auto;
+    object-fit: contain;
   }
+  .landing-hero__content {
+    padding: 5rem 5rem 6rem;
+}
 }
