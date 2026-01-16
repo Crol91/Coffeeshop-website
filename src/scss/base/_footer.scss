@@ -5,7 +5,7 @@
   font-family: $h1-h5-fontFamily;
   font-size: $h5-fontSize;
   font-weight: $weight-600;
-  color: $primary-color;
+  color: black;
 }
 
 /* FOOTER — MOBIL + TABLET (DEFAULT) */
@@ -60,6 +60,7 @@
   /* Bryt långa ord i listor */
   li {
   overflow-wrap: anywhere;
+  color: black
   }
 
   /* Rubriker i statiska kolumner */
@@ -85,6 +86,7 @@
 /* Ikonerna */
   i {
     font-size: 1.4rem; /* lite mindre på mobil/tablet */
+    color: black;
   }
 }
 
