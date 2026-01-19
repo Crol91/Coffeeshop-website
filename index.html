@@ -65,78 +65,82 @@
     </header>
 
     <!-- HÄR ska hero ligga -->
-    <section class="landing-hero" id="top">
-      <img
-        src="/src/assets/landningpage.jpg"
-        alt="background coffee image"
-        class="landing-hero__image"
-      />
-      <div class="landing-hero__content">
-        <h1 class="landing-hero__welcome">Välkommen till</h1>
-        <p class="landing-hero__title">Coffeeshop.se</p>
-        <p class="landing-hero__subtitle">
-          Upptäck våra färskrostade bönor av högsta kvalitet
-        </p>
+    <main class="page">
+      <section class="landing-hero" id="top">
+        <img
+          src="/src/assets/landningpage.jpg"
+          alt="background coffee image"
+          class="landing-hero__image"
+        />
+        <div class="landing-hero__content">
+          <h1 class="landing-hero__welcome">Välkommen till</h1>
+          <p class="landing-hero__title">Coffeeshop.se</p>
+          <p class="landing-hero__subtitle">
+            Upptäck våra färskrostade bönor av högsta kvalitet
+          </p>
 
-        <!-- Gör knappen till en länk (bra för tillgänglighet) -->
-        <a class="landing-hero__cta" href="productPage.html" data-cta="shop-now"
-          >Handla nu</a
-        >
-      </div>
-    </section>
+          <!-- Gör knappen till en länk (bra för tillgänglighet) -->
+          <a
+            class="landing-hero__cta"
+            href="productPage.html"
+            data-cta="shop-now"
+            >Handla nu</a
+          >
+        </div>
+      </section>
 
-    <!-- resten av sidan -->
-    <footer class="site-footer">
-      <details class="footerColumn">
-        <summary>Hjälp</summary>
-        <ul>
-          <li>Hjälpcenter</li>
-          <li>Villkor</li>
-          <li>Leverans</li>
-        </ul>
-      </details>
+      <!-- resten av sidan -->
+      <footer class="site-footer">
+        <details class="footerColumn">
+          <summary>Hjälp</summary>
+          <ul>
+            <li>Hjälpcenter</li>
+            <li>Villkor</li>
+            <li>Leverans</li>
+          </ul>
+        </details>
 
-      <details class="footerColumn">
-        <summary>Om Coffeeshop</summary>
-        <ul>
-          <li>Om oss</li>
-          <li>Cookies</li>
-          <li>Hållbarhet</li>
-        </ul>
-      </details>
+        <details class="footerColumn">
+          <summary>Om Coffeeshop</summary>
+          <ul>
+            <li>Om oss</li>
+            <li>Cookies</li>
+            <li>Hållbarhet</li>
+          </ul>
+        </details>
 
-      <details class="footerColumn">
-        <summary>Kontakt</summary>
-        <ul>
-          <li>Telefonnummer: 08-1234 56</li>
-          <li>E-post: kundservice@coffeeshop.se</li>
-          <li>Adress: Gustav III:s Boulevard 169 96 Solna</li>
-        </ul>
-      </details>
+        <details class="footerColumn">
+          <summary>Kontakt</summary>
+          <ul>
+            <li>Telefonnummer: 08-1234 56</li>
+            <li>E-post: kundservice@coffeeshop.se</li>
+            <li>Adress: Gustav III:s Boulevard 169 96 Solna</li>
+          </ul>
+        </details>
 
-      <div class="footerColumn footerColumn--payment">
-        <h5>Betalmetod:</h5>
-        <ul class="iconRow">
-          <li><i class="fa-brands fa-cc-visa"></i></li>
-          <li><i class="fa-brands fa-cc-mastercard"></i></li>
-          <li><i class="fa-brands fa-apple-pay"></i></li>
-          <li><i class="fa-brands fa-cc-paypal"></i></li>
-        </ul>
-      </div>
+        <div class="footerColumn footerColumn--payment">
+          <h5>Betalmetod:</h5>
+          <ul class="iconRow">
+            <li><i class="fa-brands fa-cc-visa"></i></li>
+            <li><i class="fa-brands fa-cc-mastercard"></i></li>
+            <li><i class="fa-brands fa-apple-pay"></i></li>
+            <li><i class="fa-brands fa-cc-paypal"></i></li>
+          </ul>
+        </div>
 
-      <div class="footerColumn footerColumn--social">
-        <h5>Följ oss:</h5>
-        <ul class="iconRow">
-          <li><i class="fa-brands fa-instagram"></i></li>
-          <li><i class="fa-brands fa-linkedin"></i></li>
-          <li><i class="fa-brands fa-facebook"></i></li>
-          <li><i class="fa-brands fa-youtube"></i></li>
-        </ul>
-      </div>
-    </footer>
+        <div class="footerColumn footerColumn--social">
+          <h5>Följ oss:</h5>
+          <ul class="iconRow">
+            <li><i class="fa-brands fa-instagram"></i></li>
+            <li><i class="fa-brands fa-linkedin"></i></li>
+            <li><i class="fa-brands fa-facebook"></i></li>
+            <li><i class="fa-brands fa-youtube"></i></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
 
     <!-- Cart -->
-    <div id="cartContainer"></div>
 
     <script type="module" src="/src/main.ts"></script>
   </body>
