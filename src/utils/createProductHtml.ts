@@ -1,9 +1,14 @@
 import { Coffee } from "../models/Coffee";
 import { coffeeList } from "../data/coffees";
+import { addToCart } from "../cart/addToCart";
+import { renderCartFromStorage } from "../cart/cartRender";
 
-const productContainer = document.getElementById("productContainer");
+// Function to create HTML for products
 
-if (productContainer) {
+export function renderProducts(): void {
+  const productContainer = document.getElementById("productContainer");
+
+  if (!productContainer) return;
   productContainer.innerHTML = "";
 
   coffeeList.forEach((coffee) => {
@@ -12,26 +17,49 @@ if (productContainer) {
   });
 }
 
+// This function creates the actual HTML for the individual product cards
+
 function createProductCard(coffee: Coffee): HTMLElement {
   const card = document.createElement("div");
-  card.className = "product-card";
-  card.innerHTML = `<img src="${coffee.image}" alt="${
-    coffee.name
-  }" class="product-image"/>
-    <div class="product-info">
-        <h3>${coffee.name}</h3>
-        <p><strong>${coffee.price} :-</strong></p>
-        <div class="stock-status ${
-          coffee.inStock ? "in-stock" : "out-of-stock"
-        }">
+  card.className = "productCard";
+  card.innerHTML = `
+  <img src="${coffee.image}" alt="${coffee.name}" class="productImage"/>
+    <div class="productInfo">
+        <span class="productName"><strong>${
+          coffee.name
+        } </strong></span><span class="productDescription">${
+          coffee.description
+        }</span><span class="productPrice"><strong>${coffee.price}:-</strong></span>
+        <div class="stockStatus ${coffee.inStock ? "inStock" : "outOfStock"}">
         <span class="stockCircle"></span>
-        <span>${coffee.inStock ? "Finns i lager" : "Finns ej i lager"}</span>
+        <span class="inStockText">${
+          coffee.inStock ? "Finns i lager" : "Finns ej i lager"
+        }</span>
             </div>
-            <button class="add-to-cart">Lägg i varukorgen
+            <button class="addToCart">Lägg i varukorgen
             <span class="addToCartIcon">
   <img src="/src/assets/icons/icon-cart.svg" alt="a cart icon" />
-</span>
-            </button>
+</span></button>
     </div>`;
+
+  // Click function for the add to cart button
+
+  const button = card.querySelector(".addToCart") as HTMLButtonElement;
+
+  button.addEventListener("click", () => {
+    if (!coffee.inStock) {
+      alert("Produkten finns ej i lager");
+      return;
+    }
+    const cartItem = {
+      id: coffee.name,
+      name: coffee.name,
+      price: coffee.price,
+      quantity: 1,
+      thumbnail: coffee.image,
+    };
+    addToCart(cartItem);
+    renderCartFromStorage();
+  });
   return card;
 }
