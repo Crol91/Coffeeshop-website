@@ -12,7 +12,7 @@ export const cartItemHtml = (item:CartItem): HTMLDivElement => {
     img.alt = item.name;
     img.className = "thumbnail";
 
-    // Produc name
+    // Product name
     const name = document.createElement("p");
     name.textContent = item.name;
 
@@ -89,7 +89,7 @@ export const cartHtml = (cartItems: CartItem[]) => {
     totalText.id = "totalText";
     momsText.id = "momsText";
     cartBttn.id = "cartBttn";
-    checkoutLink.id = "ceckoutLink";
+    checkoutLink.id = "checkoutLink";
 
     // Set text for cart heading, total text, checkout link and href for checkout link
     cartTitle.textContent = "Varukorg";
@@ -102,7 +102,7 @@ export const cartHtml = (cartItems: CartItem[]) => {
     cartCloseContainer.append(cartCloseSpan1, cartCloseSpan2);
     cartHeader.append(cartTitle, cartCloseContainer);
 
-    // Loop thourgh cart items and append each to the section cartpPriceSummary
+    // Loop thourgh cart items and append each to the section cartPriceSummary
     cartItems.forEach(item => {
             const itemEl = cartItemHtml(item);
             cartPriceSummary.appendChild(itemEl);

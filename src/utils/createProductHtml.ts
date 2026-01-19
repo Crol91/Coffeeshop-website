@@ -1,6 +1,6 @@
 import { Coffee } from "../models/Coffee";
 import { coffeeList } from "../data/coffees";
-import { addToCart } from "../cart/cartStorage";
+import { addToCart } from "../cart/addToCart";
 import { renderCartFromStorage } from "../cart/cartRender";
 
 // Function to create HTML for products

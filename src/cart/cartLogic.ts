@@ -1,3 +1,4 @@
+import { updateCartCounter } from "./cartCounter";
 import type { CartItem } from "./CartItem";
 import { saveCart } from "./cartStorage";
 
@@ -40,6 +41,7 @@ cartItems.forEach(item => {
                 // Recalculate the total price
                 updateTotal(cartItems, totalElId);
                 saveCart(cartItems); // Save in localstorage
+                updateCartCounter();
     });
 
         // --- PLUS BUTTON LOGIC ---
@@ -53,6 +55,7 @@ cartItems.forEach(item => {
                 
                 updateTotal(cartItems, totalElId); // Recalculate total price
                 saveCart(cartItems); // Save in localstorage
+                updateCartCounter();
         });
     });
 }
