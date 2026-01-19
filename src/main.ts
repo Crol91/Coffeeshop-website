@@ -7,12 +7,14 @@ import { cart } from "./cart/cart";
 import { checkout } from "./checkout/checkout";
 import { renderProducts } from "./utils/createProductHtml";
 import { renderCartFromStorage } from "./cart/cartRender";
+import { updateCartCounter } from "./cart/cartCounter";
 
 document.addEventListener("DOMContentLoaded", () => {
   initHamburgerNav();
   initFooterAccordion();
 
   renderCartFromStorage();
+  updateCartCounter();
 
   cart();
 
