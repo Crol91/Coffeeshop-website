@@ -58,6 +58,17 @@ cartItems.forEach(item => {
                 updateCartCounter();
         });
     });
+
+    // Handles close button cart
+    const cartContainer = document.getElementById("cartContainer");
+    const cartCloseContainer = document.getElementById("cartCloseContainer");
+
+    if(cartContainer && cartCloseContainer) {
+        cartCloseContainer.addEventListener("click", () => {
+            cartContainer.classList.add("hide");
+            cartContainer.classList.remove("show");
+        });
+    }
 }
 
 // Updates the total price in the cart

@@ -5,10 +5,9 @@
 export const cart = () => {
     const cartContainer = document.getElementById("cartContainer");
     const cartLink = document.getElementById("cartLink");
-    const cartCloseContainer = document.getElementById("cartCloseContainer");
     const navBar = document.querySelector(".navBar") as HTMLElement | null;
     const burger = document.querySelector(".burger") as HTMLElement | null;
-    if(!cartContainer || !cartLink || !cartCloseContainer) return;
+    if(!cartContainer || !cartLink) return;
 
     // Close cart when hamburger opens nav
     burger?.addEventListener("click", () => {
@@ -30,12 +29,6 @@ export const cart = () => {
         // Update hamburger state
         burger?.classList.remove("is-open");
         burger?.setAttribute("aria-expanded", "false");
-    });
-
-    // Close cart
-    cartCloseContainer.addEventListener("click", () => {
-        cartContainer.classList.add("hide");
-        cartContainer.classList.remove("show");
     });
 
 };
