@@ -49,7 +49,7 @@
 
   grid-template-columns: repeat(2, 1fr);
 
-  .product-card {
+  .productCard {
     background-color: #f8f4e9;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -60,38 +60,47 @@
     position: relative;
     z-index: 0;
 
-    img.product-image {
+    img.productImage {
       width: 100%;
       max-width: 300px;
     }
 
-    .product-info {
+    .productInfo {
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 8px;
 
-      .product-name {
+      .productName {
         font-family: $p-fontFamily;
         color: black;
       }
 
-      .product-price {
+      .productDescription {
+        font-family: $p-fontFamily;
+        color: black;
+        display: flex;
+        align-items: center;
+        min-height: 40px;
+      }
+
+      .productPrice {
         font-family: $p-fontFamily;
         color: black;
       }
 
-      .stock-status {
+      .stockStatus {
         display: flex;
         align-items: center;
         gap: 8px;
 
-        &.in-stock {
+        &.inStock {
           .stockCircle {
             background-color: rgb(109, 185, 109);
           }
         }
 
-        &.out-of-stock {
+        &.outOfStock {
           .stockCircle {
             background-color: rgb(202, 62, 62);
           }
@@ -109,13 +118,14 @@
       }
     }
 
-    .add-to-cart {
+    .addToCart {
       @include bttnDesignSecondary;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 25px;
       cursor: pointer;
+      margin-top: auto;
       max-width: 200px;
       padding: 5px;
 
@@ -127,7 +137,7 @@
         }
       }
       &:hover {
-        background-color: #fce6b0c7;
+        background-color: #bbe584c7;
       }
     }
   }
