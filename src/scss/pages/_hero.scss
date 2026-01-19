@@ -2,17 +2,21 @@
 @use "../base/mixins" as *;
 @use "sass:map";
 
+$space-hero-gap: clamp(3.5rem, 14vw, 9rem);
+$space-xs: clamp(0.5rem, 1.5vw, 1rem);
+$space-sm: clamp(0.75rem, 2vw, 1.5rem);
+$space-md: clamp(1rem, 3vw, 2.5rem);
+$space-lg: clamp(1.5rem, 4vw, 4rem);
+
 /* Landing page – Hero (mobile-first) */
 
 .landing-hero {
 position: relative;
 
-
 &__image {
   width: 100%;
   height: 87svh; // styr hur inzoomad den känns
   display: block; // tar bort default gap under img
-   
   object-fit: cover;   // zoomar och fyller ytan
   object-position: center;
   position: relative;
@@ -31,12 +35,11 @@ position: relative;
     position: absolute;
     inset: 0;
     z-index: 2;
-    padding: 0.5rem 0rem 4rem;
-
-    //width: 100%;
-    max-width: 34rem; // begränsar bredd på textinnehåll
-    margin: 0 auto; // centrerar innehåll horisontellt
-
+    padding-top: clamp(4rem, 8vw, 7rem);
+    padding-right: $space-md;
+    padding-bottom: $space-lg;
+    padding-left: $space-md;
+    max-width: 34rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -45,20 +48,22 @@ position: relative;
   /* Typografi kommer från global layout (h3/h1/p),
      här sätter vi bara spacing + ev vikt/effekt */
   &__welcome {
-    margin: 4rem 1rem 0.5rem;
+    margin: 0 0 $space-xs;
     font-weight: $weight-600;
     font-family: $h1-h5-fontFamily;
-  }
+    font-size: clamp(1.2rem, 4vw, 2.6rem);
+}
 
   &__title {
     @include sizeTitle;
     font-family: $brand-fontFamily;
-    margin: 0 1rem 3rem;
+    margin: 0 0 $space-hero-gap;
   }
 
   &__subtitle {
-    margin: 0 0 1rem 2rem;
+    margin: 0 0 $space-sm;
     max-width: 40ch;
+    font-size: clamp(0.95rem, 3.2vw, 1.6rem);
   }
 
   &__cta {
@@ -66,11 +71,15 @@ position: relative;
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
-    border: 0;
     width: auto;
     max-width: 17rem;
-    padding: 0.95rem 1.5rem;
-    margin: 3rem 2rem 0;
+    border-radius: clamp(0.9rem, 2vw, 1.4rem);
+    font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+    padding:
+    clamp(0.75rem, 2vw, 1rem)
+    clamp(1.25rem, 4vw, 2rem);
+    margin-top: $space-lg;
+   
 
     &:hover {
       background-color: $hover;
@@ -78,42 +87,29 @@ position: relative;
     }
   }
 }
+.landing-hero {
 
-/* Tablet och uppåt 
-@include respond(md) {
-  .landing-hero {
-
+  @include respond(md) {
+    &__image {
+      height: 97vh;
+      object-fit: cover;
+    }
 
     &__content {
-      width: auto;
+      padding-top: clamp(5.5rem, 9vw, 8rem);
     }
-
     &__cta {
-      width: auto;
+      border-radius: clamp(1rem, 2.3vw, 1.5rem);
     }
   }
-}
-*/
 
-@include respond(md) {
-  .landing-hero__image {
-    height: 97svh;
-    object-fit: cover;
-  }
-  .landing-hero__content {
-    padding: 1.75rem 1rem 4rem;
-    max-width: 80rem;
-    
-  }
-}
+  @include respond(lg) {
+    &::before {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
 
-/* Desktop och uppåt */
-@include respond(lg) {
-  .landing-hero__image {
-    height: auto;
-    object-fit: contain;
+     &__title {
+    margin-bottom: $space-lg;
   }
-  .landing-hero__content {
-    padding: 5rem 5rem 6rem;
-}
+  }
 }
