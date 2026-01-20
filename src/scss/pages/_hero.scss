@@ -11,17 +11,17 @@ $space-lg: clamp(1.5rem, 4vw, 4rem);
 /* Landing page – Hero (mobile-first) */
 
 .landing-hero {
-position: relative;
-
-&__image {
-  width: 100%;
-  height: 87svh; // styr hur inzoomad den känns
-  display: block; // tar bort default gap under img
-  object-fit: cover;   // zoomar och fyller ytan
-  object-position: center;
   position: relative;
-  z-index: 0; 
-}
+
+  &__image {
+    width: 100%;
+    height: 87svh; // styr hur inzoomad den känns
+    display: block; // tar bort default gap under img
+    object-fit: cover; // zoomar och fyller ytan
+    object-position: center;
+    position: relative;
+    z-index: 0;
+  }
   /* Overlay för läsbarhet */
   &::before {
     content: "";
@@ -52,7 +52,7 @@ position: relative;
     font-weight: $weight-600;
     font-family: $h1-h5-fontFamily;
     font-size: clamp(1.2rem, 4vw, 2.6rem);
-}
+  }
 
   &__title {
     @include sizeTitle;
@@ -75,11 +75,8 @@ position: relative;
     max-width: 17rem;
     border-radius: clamp(0.9rem, 2vw, 1.4rem);
     font-size: clamp(0.95rem, 2.2vw, 1.2rem);
-    padding:
-    clamp(0.75rem, 2vw, 1rem)
-    clamp(1.25rem, 4vw, 2rem);
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 4vw, 2rem);
     margin-top: $space-lg;
-   
 
     &:hover {
       background-color: $hover;
@@ -88,7 +85,6 @@ position: relative;
   }
 }
 .landing-hero {
-
   @include respond(md) {
     &__image {
       height: 97vh;
@@ -108,8 +104,8 @@ position: relative;
       background-color: rgba(255, 255, 255, 0.3);
     }
 
-     &__title {
-    margin-bottom: $space-lg;
-  }
+    &__title {
+      margin-bottom: $space-lg;
+    }
   }
 }
