@@ -100,12 +100,17 @@ $space-lg: clamp(1.5rem, 4vw, 4rem);
   }
 
   @include respond(lg) {
-    &::before {
-      background-color: rgba(255, 255, 255, 0.3);
-    }
+    min-height: 100vh;
 
-    &__title {
-      margin-bottom: $space-lg;
+    &__image {
+      height: 100vh;
+
+      &::before {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+      &__title {
+        margin-bottom: $space-lg;
+      }
     }
   }
 }
