@@ -100,7 +100,6 @@ $space-lg: clamp(1.5rem, 4vw, 4rem);
   }
 
   @include respond(lg) {
-<<<<<<< HEAD
     &::before {
       background-color: rgba(255, 255, 255, 0.3);
     }
@@ -109,19 +108,3 @@ $space-lg: clamp(1.5rem, 4vw, 4rem);
   }
   }
   }
-=======
-    min-height: 100vh;
-
-    &__image {
-      height: 100vh;
-
-      &::before {
-        background-color: rgba(255, 255, 255, 0.3);
-      }
-      &__title {
-        margin-bottom: $space-lg;
-      }
-    }
-  }
-}
->>>>>>> origin/develop
