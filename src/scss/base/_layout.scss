@@ -129,13 +129,13 @@ li {
   .nav-overlay {
     display: none !important;
   }
-  #cartContainer {
-    max-width: 40% !important;
-  }
   #productContainer {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
 
 @include respond(lg) {
+    #cartContainer {
+    max-width: 40% !important;
+  }
 }
