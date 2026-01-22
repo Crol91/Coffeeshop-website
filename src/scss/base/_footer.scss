@@ -22,7 +22,7 @@ Uses accordion layout with details/summary */
 /* Accordion (mobil/tablet) */
 .footerColumn {
   border-bottom: 1px solid black;
-  padding: 1
+  padding: 1rem 0;
 
   /* Accordion header */
   summary {
@@ -32,7 +32,6 @@ Uses accordion layout with details/summary */
     position: relative;
     padding-right: 2rem;
   
-  /* Show default marker in WebKit browsers */
    &::-webkit-details-marker {
    display: inline-block;
    }
@@ -156,6 +155,7 @@ payment and social sections */
     display: block;
     }
 
+  /* Larger icons on desktop */
   .iconRow {
     justify-content: flex-start;
     gap: 14px;
@@ -164,7 +164,7 @@ payment and social sections */
     }
   }
 
-  /* Reset ordning på desktop */
+  /* Reset column order on desktop */
   .footerColumn--payment { order: 0; }
   .footerColumn--social  { order: 0; }
 }
