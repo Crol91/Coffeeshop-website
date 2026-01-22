@@ -1,6 +1,8 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+/* Footer title styling
+Shared styles for footer heading */
 @mixin footer-title {
   font-family: $h1-h5-fontFamily;
   font-size: $h5-fontSize;
@@ -8,7 +10,8 @@
   color: black;
 }
 
-/* FOOTER — MOBIL + TABLET (DEFAULT) */
+/* FOOTER — Mobile & Tablet (default)
+Uses accordion layout with details/summary */
 .site-footer {
   background: #fff;
   padding: 2rem 1rem;
@@ -19,8 +22,9 @@
 /* Accordion (mobil/tablet) */
 .footerColumn {
   border-bottom: 1px solid black;
-  padding: 1rem 0;
+  padding: 1
 
+  /* Accordion header */
   summary {
     @include footer-title;
     cursor: pointer;
@@ -28,11 +32,11 @@
     position: relative;
     padding-right: 2rem;
   
-
+  /* Show default marker in WebKit browsers */
    &::-webkit-details-marker {
    display: inline-block;
    }
-
+  /* Arrow icon for accordion state */
     &::after {
     content: "⌄";
     position: absolute;
@@ -41,14 +45,14 @@
     transition: transform 0.2s ease;
   }
 }
-
+ /* Rotate arrow when accordion is open */
   &[open] {
   summary::after {
     transform: rotate(180deg);
   }
 }
 
-  /* Vanliga listor (inte ikonrader) */
+  /* Regular lists (excluding icon rows) */
   ul:not(.iconRow) {
     margin: 0.75rem 0 0;
     padding: 0;
@@ -57,13 +61,13 @@
     gap: 0.5rem;
   }
 
-  /* Bryt långa ord i listor */
+  /* Allow long words (emails, addresses) to wrap */
   li {
   overflow-wrap: anywhere;
   color: black;
   }
 
-  /* Rubriker i statiska kolumner */
+  /* Headings used in non-accordion columns */
   h5 {
   @include footer-title;;
   margin: 0;           
@@ -71,7 +75,7 @@
   }
 }
 
-/* Ikonrader */
+/* Icon rows (payment & social icons) */
 .iconRow {
   display: flex;
   gap: 12px;
@@ -83,14 +87,15 @@
   padding: 0;
   margin: 0;
 
-/* Ikonerna */
+/* Icon styling */
   i {
     font-size: 1.4rem; /* lite mindre på mobil/tablet */
     color: black;
   }
 }
 
-/* MOBIL/TABLET: text + ikoner på samma rad (betal/social) */
+/* Mobile/Tablet layout for 
+payment and social sections */
 .footerColumn--payment,
 .footerColumn--social {
   display: flex;
@@ -99,15 +104,16 @@
   justify-content: center;
 }
 
+/* Remove divider for last column */
 .footerColumn--social {
  border-bottom: none;
 }
 
-/* Mobil/tablet-ordning */
+/* Reorder columns on mobile/tablet */
 .footerColumn--payment { order: -10; }
 .footerColumn--social  { order: 999; }
 
-/* DESKTOP */
+/* DESKTOP LAYOUT */
 @include respond(lg) {
   .site-footer {
     display: grid;
@@ -120,7 +126,7 @@
     border: none;
     padding: 0;
     
-  /* Lås accordion på desktop */
+  /* Disable accordion behavior on desktop */
     summary {
     cursor: default;
     pointer-events: none;
@@ -128,11 +134,12 @@
     margin-bottom: 0.75rem;
     }
 
+  /* Hide accordion arrow */
    summary::after {
     display: none;
     }
 
-  /* Visa alltid innehåll */
+  /* Hide accordion arrow */
    > *:not(summary) {
     display: block;
     }
@@ -143,7 +150,7 @@
     }
   }
 
-  /* DESKTOP: betal/social ska vara staplade (rubrik över ikoner) */
+  /* Stack heading above icons on desktop */
   .footerColumn--payment,
   .footerColumn--social {
     display: block;
