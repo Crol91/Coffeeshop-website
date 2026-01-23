@@ -1,6 +1,6 @@
 @use "../base/variables" as *;
 @use "../base/mixins" as *;
-//@use "sass:map";
+@use "sass:map";
 
 /* HERO SPACING VARIABLES
 Uses clamp() for responsive spacing across screen sizes */
@@ -115,10 +115,10 @@ Image background + overlay + text content on top */
     &::before {
      background: linear-gradient(
     90deg,
-  rgba(255, 255, 255, 0.55) 0%,   // MYCKET ljust till vänster
-  rgba(255, 255, 255, 0.50) 60%,   // mjuk övergång
-  rgba(255, 255, 255, 0.25) 70%,  // nästan klart
-  rgba(255, 255, 255, 0) 100%     // helt genomskinligt
+  rgba(255, 255, 255, 0.55) 0%,   
+  rgba(255, 255, 255, 0.50) 60%,  
+  rgba(255, 255, 255, 0.25) 70%,  
+  rgba(255, 255, 255, 0) 100%     
   );
      }
      &__title {
