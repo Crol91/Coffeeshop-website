@@ -47,10 +47,12 @@ function createProductCard(coffee: Coffee): HTMLElement {
   const button = card.querySelector(".addToCart") as HTMLButtonElement;
 
   button.addEventListener("click", () => {
+    /* Check if product is in stock, return if not */
     if (!coffee.inStock) {
       alert("Produkten finns ej i lager");
       return;
     }
+    /* Create object for cart item */
     const cartItem = {
       id: coffee.name,
       name: coffee.name,
