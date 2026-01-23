@@ -1,3 +1,4 @@
+/* Structure cart item objects */
 export interface CartItem {
     id: string;
     thumbnail: string;

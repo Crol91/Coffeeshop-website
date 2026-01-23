@@ -11,17 +11,21 @@
   </head>
   <body>
     <div id="app">
+        <!-- NAV -->
     <nav>
         <div id="navBar">
+            <!-- Logo -->
             <a href="index.html" class="site-logo" id="feature-h1HomeLink">
             Coffeeshop
             </a>
             <a href="index.html">
+            <!-- Link coninue shopping -->
             <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#4e3328" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
             Fortsätt handla
             </a>
         </div>
     </nav>
+    <!-- Section containing car items -->
     <section id="cartSection">
         <div id="cartMenu">
             <div id="menuContainer">
@@ -33,7 +37,7 @@
 
         <div id="cartProductsContainer">
         </div>
-
+        <!-- Total price -->
         <div id="totalPriceContainer">
         <div id="totalPrice">
             <h3 id="totalText"></h3>
@@ -41,7 +45,7 @@
         </div>
         </div>
     </section>
-
+    <!-- Section payment -->
     <section id="paymentSection">
         <div id="paymentMenu">
             <div id="paymentMenuContainer">
@@ -51,7 +55,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- Section Form -->
         <section id="checkoutFormSection">
                 <form id="checkoutForm">
 
@@ -96,7 +100,7 @@
                         <label for="cvv">CVV</label>
                         <input type="text" id="cvv" name="cvv" pattern="\d{3}" maxlength="3" placeholder="XXX" inputmode="numeric" required autocomplete="cc-csc">
                     </fieldset>
-
+                    <!-- Submit -->
                     <button type="submit" id="submitOrder">Slutför köp</button>
                 </form>
             </div>

@@ -21,6 +21,7 @@ body {
     border: 1px solid lightgray;
 }
 }
+/* Nav containing, logo, "Fortsätt handla" */
 nav{
     background-color: white;
     width: 100%;
@@ -49,7 +50,7 @@ nav{
         }
     }
 }
-
+/* FORM */
 fieldset{
     @include flex($direction: column);
     border-radius: 10px;
@@ -79,7 +80,7 @@ fieldset{
         }
     }
 }
-
+/* Cart */
 #cartSection{
     background-color: rgb(235, 235, 235);
     padding: $p20;
@@ -99,7 +100,7 @@ fieldset{
         }
     }
 }
-
+/* Payment */
 #paymentSection{
     background-color: rgb(235, 235, 235);
     max-width: 700px;
@@ -130,6 +131,7 @@ fieldset{
             }
         }
     }
+    /* Confirmation box */
     #orderConfirmation{
         position: fixed;
         background-color: $secondary-color;
