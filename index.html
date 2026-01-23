@@ -3,27 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Ephesis&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- Responsive scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffeeshop</title>
   </head>
+
   <body>
+    <!-- Fixed header with hamburger + quick actions -->
     <header class="site-header">
-      <!-- Hamburger: alltid synlig -->
+      <!-- Hamburger button -->
       <button class="burger" aria-label="Öppna meny" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
+      <!-- Logo / home link -->
       <a href="index.html" class="site-logo" id="feature-h1HomeLink">
         Coffeeshop
       </a>
 
-      <!-- Snabblänkar (IKON + text på desktop, bara ikon på mobil/tablet) -->
+      <!-- Quick actions (icons + text on desktop, icons only on mobile/tablet) -->
       <div class="navActions">
         <a class="navAction" href="#favourites" aria-label="Favoriter">
           <span class="navAction__icon">
@@ -44,15 +49,15 @@
 
         <a class="navAction" href="#cart" id="cartLink" aria-label="Varukorg">
           <span class="navAction__icon">
-            <span id="cartCounter">0</span>
             <img src="/src/assets/icons/icon-cart.svg" alt="a cart icon"
           /></span>
           <span class="navAction__text">Varukorg</span>
         </a>
       </div>
+      <!-- Overlay behind off-canvas menu -->
       <div class="nav-overlay" hidden></div>
 
-      <!-- Sidomeny: här ska INTE snabblänkarna ligga -->
+      <!-- Off-canvas navigation menu -->
       <nav class="navBar" aria-hidden="true">
         <div class="navItems">
           <ul>
@@ -64,14 +69,16 @@
       </nav>
     </header>
 
-    <!-- HÄR ska hero ligga -->
+    <!-- Main page content -->
     <main class="page">
+      <!-- Hero section -->
       <section class="landing-hero" id="top">
         <img
           src="/src/assets/landningpage.jpg"
           alt="background coffee image"
           class="landing-hero__image"
         />
+        <!-- Hero text content placed on top of image -->
         <div class="landing-hero__content">
           <h1 class="landing-hero__welcome">Välkommen till</h1>
           <p class="landing-hero__title">Coffeeshop.se</p>
@@ -79,7 +86,7 @@
             Upptäck våra färskrostade bönor av högsta kvalitet
           </p>
 
-          <!-- Gör knappen till en länk (bra för tillgänglighet) -->
+          <!-- CTA button (link to products) -->
           <a
             class="landing-hero__cta"
             href="productPage.html"
@@ -89,7 +96,7 @@
         </div>
       </section>
 
-      <!-- resten av sidan -->
+      <!-- Footer -->
       <footer class="site-footer">
         <details class="footerColumn">
           <summary>Hjälp</summary>
@@ -118,6 +125,7 @@
           </ul>
         </details>
 
+        <!-- Payment icons -->
         <div class="footerColumn footerColumn--payment">
           <h5>Betalmetod:</h5>
           <ul class="iconRow">
@@ -128,6 +136,7 @@
           </ul>
         </div>
 
+        <!-- Social icons -->
         <div class="footerColumn footerColumn--social">
           <h5>Följ oss:</h5>
           <ul class="iconRow">
@@ -140,8 +149,10 @@
       </footer>
     </main>
 
-    <!-- Cart -->
+    <!-- Cart container (filled by TypeScript) -->
     <div id="cartContainer"></div>
+
+    <!-- App entry -->
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
