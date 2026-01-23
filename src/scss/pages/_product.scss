@@ -1,6 +1,7 @@
 @use "../base/mixins" as *;
 @use "../base/variables" as *;
 
+/* Background image and styling */
 .productPageContent {
   min-height: 100svh;
   position: relative;
@@ -40,6 +41,7 @@
   }
 }
 
+/* Turning productContasiner into a grid */
 #productContainer {
   display: grid;
   gap: 20px;
@@ -49,6 +51,7 @@
 
   grid-template-columns: repeat(2, 1fr);
 
+  /* Styling the individual product cards and their content */
   .productCard {
     background-color: #f8f4e9;
     border-radius: 10px;
@@ -118,6 +121,7 @@
       }
     }
 
+    /* Add to cart button styling */
     .addToCart {
       @include bttnDesignSecondary;
       display: flex;
